@@ -35,6 +35,8 @@ _The rest is up to you and your imagination. 🦄_
 
 ✦ [<kbd> <br> cropCircle <br> </kbd>](https://crop-circle.imageonline.co/) <img width="25" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=7A0045"/>
 
+[<kbd> <br> auto re-indent online...<br> </kbd>](https://codebeautify.org/css-beautify-minify) [<kbd> <br> ...code beautifier <br> </kbd>](https://beautifier.io/)
+
 <br><br>
 
 # 🪢📿👝🌉
