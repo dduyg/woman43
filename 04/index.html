@@ -111,17 +111,18 @@
             display: none;
         }
         .btn {
-            border: 0.075em solid #9a9cfc;
+            display: inline-block;
             padding: 10px 15px;
-            text-decoration: none;
-            cursor: pointer;
             color: #9a9cfc;
+            background: transparent;
+            text-decoration: none;
             font-size: 15px;
             text-transform: uppercase;
             font-weight: bold;
             border-radius: 10px;
+            border: 0.075em solid #9a9cfc;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            display: inline-block;
+            cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
         .btn:hover {
@@ -129,6 +130,7 @@
             color: #f3c7ca;
             animation: shake 1s infinite;
         }
+        .btn.visited { background: rgba(0, 0, 0, 0.6); }
         @keyframes shake {
             0% { transform: translate(1px, 1px) rotate(0deg); }
             10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -223,5 +225,26 @@
         <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/BLOBs/blob-18.gif" alt="💮">
         <div style="width: 50px; flex-shrink: 0;"></div>
     </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll(".btn");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    // Mark as visited if stored before
+    if (localStorage.getItem("visited_" + href)) {
+      link.classList.add("visited");
+    }
+
+    // When clicked, store and update style
+    link.addEventListener("click", () => {
+      localStorage.setItem("visited_" + href, true);
+      link.classList.add("visited");
+    });
+  });
+});
+</script>
 </body>
 </html>
