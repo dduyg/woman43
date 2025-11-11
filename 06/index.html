@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <style>
-        ::selection {background-color: black; color: #fff;}
+        ::selection { background-color: #B5A7A0; color: black; }
         @font-face {
             font-family: 'Pentameter Light';
             src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Pentameter-Wide-Light.woff') format('woff');
@@ -55,10 +55,9 @@
             .container { max-width: 600px; }
         }
         #info h1 {
+            font-family: 'Pentameter Light', serif;
             font-size: 1.3em;
-            letter-spacing: 3px;
-            text-transform: none !important;
-            margin: 10px auto 90px;
+            margin: 15px auto 90px;
         }
         #info p:not(:last-child) {
             margin-bottom: 100px;
@@ -76,8 +75,10 @@
             margin-bottom: 15px;
         }
         .header {
-            font-family: 'Pentameter Light', serif;
-            font-size: 1.1em;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
             margin-bottom: 0; padding-bottom: 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
@@ -110,7 +111,7 @@
 <main>
     <section id="info">
       <div class="container">
-         <h1 class="header">Seas <a href="../07/">of</a> Syntax</h1>
+         <h1>Seas <a href="../07/">of</a> Syntax</h1>
          <p><i>Masked Language Modeling</i> (MLM) is a technique used in natural language processing (NLP) for training models, particularly in the context of pre-trained models like BERT (Bidirectional Encoder Representations from Transformers). Unlike traditional language models, which predict the next word in a sequence from left to right (as done in models like GPT), MLM takes a different approach by randomly masking certain words in a sentence and then training the model to predict these hidden words. The idea is that by learning to predict the missing parts of the sentence based on the surrounding context, the model becomes highly adept at understanding the relationships between words in a bidirectional (both left-to-right and right-to-left) way.</p>
          <p>Imagine a simple sentence: <i>"The cat sat on the mat."</i> In MLM, certain words in this sentence are masked, so it might look like: "The <code>[MASK]</code> sat on the <code>[MASK]</code>." The task of the model is to correctly predict the hidden words based on the surrounding context. In this case, the model would use the visible words—"The," "sat on the"—to guess that the hidden words are "cat" and "mat." By constantly being exposed to sentences like this, where random parts are concealed, the model learns to predict missing words based on the context of the entire sentence, and in doing so, it becomes highly proficient in understanding the relationships between words.</p>
          <p>This approach stands in contrast to older models that only look at words in one direction, usually left to right. By training models to predict words based on both the words before and after them, MLM allows for a richer understanding of language. For example, in the sentence, "The quick brown fox jumps over the lazy dog," if you were to mask "brown" and "jumps," the model would need to figure out that "brown" fits well before "fox" and "jumps" fits after "fox" by considering the entire context of the sentence, including the words that come after the masked tokens.</p>
