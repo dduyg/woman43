@@ -156,18 +156,13 @@
     }
 
     .select-menu {
-      position: fixed;
-      top: 4rem;
-      right: 3rem;
-      width: 85%;
-      height: 65vh;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(50, 50, 50, 0.8);
-      -webkit-backdrop-filter: contrast(0.8) blur(7px) url(#fluted);
-      backdrop-filter: contrast(0.8) blur(7px) url(#fluted);
+      position: absolute;
+      top: 100%; left: auto; right: 0;    
+      margin-top: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 5px; min-width: 200px;     
       text-shadow: none;
       line-height: 1.2;
       z-index: 9999;
@@ -185,12 +180,10 @@
       flex-direction: column;
       gap: 1.5rem;
       align-items: flex-start;
-    }
+    }    
     .option {
-      color: white;
-      cursor: pointer;
-      border: none;
-      background: none;
+      color: white; cursor: pointer;
+      border: none; background: none;
       font-size: clamp(0.8rem, 5vw, 4rem);
       border-left: 3px solid white;
       padding-left: 1.2em;
