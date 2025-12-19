@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Roboto",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
+    "category": "sans-serif",
+    "tags": ["modern","clean","google"]
+  },
+  {
+    "name": "Grotta",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Grotta-Regular.woff2",
+    "category": "sans-serif",
+    "tags": ["custom","display","grotta"]
+  },
+  {
+    "name": "Host Grotesk",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Host+Grotesk&display=swap",
+    "category": "sans-serif",
+    "tags": ["warm","aesthetic","google"]
+  },
+  {
+    "name": "SUSE",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=SUSE&display=swap",
+    "category": "sans-serif",
+    "tags": ["futuristic","aesthetic","google"]
+  },
+  {
+    "name": "Anonymous Pro",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap",
+    "category": "monospace",
+    "tags": ["techno","code","google"]
+  },
+  {
+    "name": "SF Pro Text",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/SFProText-Regular.woff2",
+    "category": "sans-serif",
+    "tags": ["custom","display","SF"]
+  }
+]
