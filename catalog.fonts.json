@@ -54,5 +54,12 @@
     "url": "https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap",
     "category": "sans-serif",
     "tags": ["brutalist","stenciled","modular","contemporary"]
+  },
+  {
+    "name": "Space Grotesk",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap",
+    "category": "sans-serif",
+    "tags": ["contemporary","aesthetic","geometric"]
   }
 ]
