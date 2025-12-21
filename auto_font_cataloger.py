@@ -376,10 +376,14 @@ Category: {category}
             print(f"　　　🤷‍♀️ Oops, AI analysis error: {e}")
             return []
     
-    def add_font_interactive(self):
+    def add_font_interactive(self, font_number=None):
         """Interactive prompt to add a new font"""
+        header = "░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ  █▓▒░"
+        if font_number:
+            header = f"░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ　＃{font_number}  █▓▒░"
+        
         print("\n" + "═" * 67)
-        print("░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ  █▓▒░")
+        print(header)
         print("═" * 67)
         
         # Get font details
@@ -472,8 +476,90 @@ Category: {category}
             print("❌ Cancelled.")
             return None
     
-    def run(self):
-        """Main execution flow"""
+    def run_batch_mode(self):
+        """Batch mode to add multiple fonts"""
+        try:
+            # Fetch current catalog
+            print("\n📡 Fetching current catalog...")
+            catalog, sha = self.get_current_catalog()
+            print(f"✓ Found {len(catalog)} existing fonts")
+            
+            new_fonts = []
+            font_count = 1
+            
+            while True:
+                # Add font
+                new_font = self.add_font_interactive(font_number=font_count)
+                
+                if new_font:
+                    # Check for duplicates
+                    if any(font["name"] == new_font["name"] for font in catalog + new_fonts):
+                        print(f"\n⚠  Font '{new_font['name']}' already exists!")
+                        overwrite = input("　ＯＶＥＲＷＲＩＴＥ？ (yes/no)： ").strip().lower()
+                        if overwrite in ['yes', 'y']:
+                            # Remove from catalog if exists
+                            catalog = [f for f in catalog if f["name"] != new_font["name"]]
+                            # Remove from new_fonts if exists
+                            new_fonts = [f for f in new_fonts if f["name"] != new_font["name"]]
+                            new_fonts.append(new_font)
+                            print(f"✓ Font '{new_font['name']}' added to batch")
+                        else:
+                            print("⊗ Font skipped.")
+                    else:
+                        new_fonts.append(new_font)
+                        print(f"✓ Font '{new_font['name']}' added to batch")
+                    
+                    font_count += 1
+                
+                # Ask if user wants to add more
+                print("\n" + "─" * 67)
+                add_more = input("　ＡＤＤ　ＡＮＯＴＨＥＲ　ＦＯＮＴ？ (yes/no)： ").strip().lower()
+                
+                if add_more not in ['yes', 'y']:
+                    break
+            
+            # Final confirmation and commit
+            if new_fonts:
+                print("\n" + "═" * 67)
+                print(f"░▒▓█  ＢＡＴＣＨ　ＳＵＭＭＡＲＹ：{len(new_fonts)} fonts ready  █▓▒░")
+                print("═" * 67)
+                
+                for i, font in enumerate(new_fonts, 1):
+                    print(f"\n　{i}. {font['name']}")
+                    print(f"　　　Source: {font['source']}")
+                    print(f"　　　Category: {font['category']}")
+                    print(f"　　　Tags: {', '.join(font['tags'])}")
+                
+                print("\n" + "═" * 67)
+                final_confirm = input(f"\n　ＣＯＭＭＩＴ　ＡＬＬ　{len(new_fonts)}　ＦＯＮＴＳ？ (yes/no)： ").strip().lower()
+                
+                if final_confirm in ['yes', 'y']:
+                    # Add all fonts to catalog
+                    catalog.extend(new_fonts)
+                    
+                    # Create commit message
+                    if len(new_fonts) == 1:
+                        commit_msg = f"Add {new_fonts[0]['name']} to font catalog"
+                    else:
+                        font_names = ', '.join([f['name'] for f in new_fonts[:3]])
+                        if len(new_fonts) > 3:
+                            commit_msg = f"Add {len(new_fonts)} fonts ({font_names}, ...)"
+                        else:
+                            commit_msg = f"Add {len(new_fonts)} fonts ({font_names})"
+                    
+                    print(f"\n🌀 Committing to catalog...")
+                    self.update_catalog(catalog, sha, commit_msg)
+                    print(f"╰┈➤ 🎊 Successfully added {len(new_fonts)} font(s) to catalog!")
+                else:
+                    print("❌ Batch cancelled.")
+            else:
+                print("\n⊗ No fonts to commit.")
+                
+        except Exception as e:
+            print(f"✗ Error: {e}")
+    
+    def run_single_mode(self):
+        """Single font addition mode (original behavior)"""
         try:
             # Fetch current catalog
             print("\n📡 Fetching current catalog...")
@@ -545,9 +631,22 @@ def main():
     else:
         use_ai = False
     
-    # Create manager and run
+    # Create manager
     manager = FontCatalogManager(token, repo_owner, repo_name, file_path, branch, use_ai, gemini_key)
-    manager.run()
+    
+    # Choose mode
+    print("\n" + "═" * 67)
+    print("░▒▓█  ＳＥＬＥＣＴ　ＭＯＤＥ  █▓▒░")
+    print("═" * 67)
+    print("\n　1. Single font (add one font)")
+    print("　2. Batch mode (add multiple fonts)")
+    
+    mode_choice = input("\n　ＭＯＤＥ　(1/2)： ").strip()
+    
+    if mode_choice == "2":
+        manager.run_batch_mode()
+    else:
+        manager.run_single_mode()
 
 
 if __name__ == "__main__":
