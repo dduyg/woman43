@@ -20,14 +20,16 @@ import json
 import requests
 from getpass import getpass
 from base64 import b64encode, b64decode
+import io
 
 try:
     import google.generativeai as genai
+    from PIL import Image, ImageDraw, ImageFont
     GEMINI_AVAILABLE = True
 except ImportError:
     GEMINI_AVAILABLE = False
-    print("⚠️  google-generativeai not installed. AI features disabled.")
-    print("   Install with: pip install google-generativeai")
+    print("⚠️  google-generativeai or PIL not installed. AI features disabled.")
+    print("   Install with: pip install google-generativeai pillow")
 
 
 class FontCatalogManager:
@@ -88,37 +90,120 @@ class FontCatalogManager:
         else:
             raise Exception(f"Failed to update file: {response.status_code} - {response.text}")
     
-    def analyze_font_with_gemini(self, name, source, url, category):
-        """Use Gemini to analyze font and generate aesthetic tags"""
+    def get_google_font_specimen(self, font_name):
+        """Generate a visual specimen for Google Fonts"""
+        try:
+            # Try to get the font specimen from Google Fonts
+            safe_name = font_name.replace(' ', '+')
+            specimen_url = f"https://fonts.gstatic.com/s/a/{safe_name}.png"
+            
+            response = requests.get(specimen_url, timeout=5)
+            if response.status_code == 200:
+                return Image.open(io.BytesIO(response.content))
+            
+            # Alternative: Google Fonts specimen sheet
+            alt_url = f"https://fonts.google.com/specimen/{safe_name}"
+            # This won't give us direct image, so we'll use text rendering instead
+            
+            return None
+        except Exception as e:
+            print(f"　　　⚠️  Could not fetch Google Font specimen: {e}")
+            return None
+    
+    def generate_font_specimen(self, font_name, source, url):
+        """Generate a text specimen image showing how the font looks"""
+        try:
+            # Create a specimen image with sample text
+            img = Image.new('RGB', (800, 400), color='white')
+            draw = ImageDraw.Draw(img)
+            
+            # Sample text to show font characteristics
+            sample_text = [
+                f"{font_name}",
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "abcdefghijklmnopqrstuvwxyz",
+                "0123456789 !@#$%&*()_+-=",
+                "The quick brown fox jumps over the lazy dog"
+            ]
+            
+            # For now, use default font (we'll let Gemini analyze from URL or name)
+            # In production, you'd download and render the actual font
+            y_position = 20
+            for text in sample_text:
+                draw.text((20, y_position), text, fill='black')
+                y_position += 70
+            
+            return img
+        except Exception as e:
+            print(f"　　　⚠️  Could not generate specimen: {e}")
+            return None
+    
+    def analyze_font_visually(self, name, source, url, category):
+        """Use Gemini to visually analyze the font's appearance"""
         if not self.model:
             return []
         
         try:
-            prompt = f"""Analyze this font and describe its aesthetic characteristics:
+            # Try to get visual specimen
+            font_image = None
+            
+            if source == "google":
+                # For Google Fonts, try to get official specimen
+                font_image = self.get_google_font_specimen(name)
+            
+            # If we have an image, analyze it visually
+            if font_image:
+                prompt = """Analyze this font specimen image carefully and describe ONLY what you see visually.
+
+Look at the actual letterforms and identify:
+- **Structure**: Is it geometric (constructed from circles/squares), organic (flowing/natural), modular (repeating shapes), grotesque (industrial), or humanist (calligraphic influence)?
+- **Terminals**: Are the letter endings rounded, sharp, square, or angled?
+- **Weight & Width**: Is it light, regular, bold, condensed, or extended?
+- **Character Spacing**: Is it monospaced (fixed-width like coding fonts) or proportional?
+- **X-height**: Is it tall or short compared to ascenders/descenders?
+- **Stroke Contrast**: Is there high contrast (thick/thin variation) or low contrast (uniform)?
+- **Style Period**: Does it look retro (70s/80s/90s), vintage (pre-1950s), contemporary (modern clean), or futuristic?
+- **Mood**: Does it feel playful, serious, warm, cold, technical, elegant, casual, distressed?
+- **Special Features**: Any unique characteristics like pixelation, distressing, decorative elements, hand-drawn quality?
+
+Based ONLY on the visual appearance, generate 3-5 precise aesthetic tags.
+
+Return ONLY comma-separated tags with no explanation.
+Example: geometric, brutalist, contemporary, monospaced, coding"""
+
+                response = self.model.generate_content([prompt, font_image])
+                
+            else:
+                # Fallback: Use URL analysis for custom fonts or if image unavailable
+                prompt = f"""Analyze how this font likely looks based on its URL and context:
 
 Font Name: {name}
 Source: {source}
 Category: {category}
 URL: {url}
 
-Based on the font name, source, and technical category, generate 3-5 precise aesthetic tags that describe this font's visual style and personality.
+From the URL path, font name, and category, infer the visual aesthetic:
+- For ".woff2" custom fonts, analyze the filename for clues
+- For Google Fonts, consider typical characteristics of that family
+- For monospace category, it's likely coding-oriented
+- Look for keywords in the name/URL like: rounded, condensed, display, text, mono, etc.
 
-Consider aspects like:
-- Visual structure (geometric, organic, modular, grotesque, humanist, etc.)
-- Mood/feeling (playful, serious, warm, cold, calm, energetic, etc.)
-- Historical period (retro, futuristic, contemporary, vintage, medieval, etc.)
-- Use case (coding, display, body text, branding, business, etc.)
-- Stylistic traits (rounded, sharp, distressed, clean, brutalist, etc.)
-- Special characteristics (monospaced, condensed, extended, handwritten, etc.)
+Generate 3-5 tags describing the VISUAL APPEARANCE:
+- Structure: geometric, organic, humanist, grotesque, modular
+- Style: retro, vintage, contemporary, futuristic, medieval
+- Mood: playful, serious, calm, energetic, warm, cold
+- Features: rounded, sharp, distressed, clean, monospaced, pixel
+- Use: coding, display, formal, casual, technical, artistic
 
-Return ONLY the tags as a comma-separated list with no additional text, explanation, or formatting.
-Example output: geometric, brutalist, contemporary, clean, modular"""
+Return ONLY comma-separated tags.
+Example: geometric, contemporary, clean, neutral, business"""
 
-            response = self.model.generate_content(prompt)
+                response = self.model.generate_content(prompt)
+            
             tags_text = response.text.strip()
             
-            # Clean up response - remove any markdown or extra text
-            tags_text = tags_text.replace('*', '').replace('`', '').strip()
+            # Clean up response
+            tags_text = tags_text.replace('*', '').replace('`', '').replace('#', '').strip()
             
             # Parse the response
             suggested_tags = [tag.strip().lower() for tag in tags_text.split(',') if tag.strip()]
@@ -149,16 +234,16 @@ Example output: geometric, brutalist, contemporary, clean, modular"""
         print("　　　（sans-serif • serif • monospace • display • handwriting）")
         category = input("　　　＞ ").strip().lower()
         
-        # AI-powered tag suggestion
+        # AI-powered visual tag analysis
         print("\n　━━━ ＴＡＧＳ ━━━")
         suggested_tags = []
         
         if self.model:
-            print("　　　🤖 Analyzing font aesthetics with AI...")
-            suggested_tags = self.analyze_font_with_gemini(name, source, url, category)
+            print("　　　🤖 Analyzing font visual appearance...")
+            suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　💡 AI Suggested: {', '.join(suggested_tags)}")
+                print(f"　　　💡 AI Detected Visual Style: {', '.join(suggested_tags)}")
                 print("　　　（Press Enter to accept, or type your own comma-separated tags）")
             else:
                 print("　　　（Enter comma-separated tags）")
@@ -170,7 +255,7 @@ Example output: geometric, brutalist, contemporary, clean, modular"""
         # Use suggested if empty, otherwise parse input
         if not tags_input and suggested_tags:
             tags = suggested_tags
-            print(f"　　　✨ Using AI suggestions: {', '.join(tags)}")
+            print(f"　　　✨ Using AI visual analysis: {', '.join(tags)}")
         else:
             tags = [tag.strip().lower() for tag in tags_input.split(",") if tag.strip()]
         
@@ -259,7 +344,7 @@ def main():
     # Optional: Gemini API for AI tag suggestions
     gemini_key = None
     if GEMINI_AVAILABLE:
-        use_ai = input("\n　Ｕ Ｓ Ｅ 　Ａ Ｉ 　Ｔ Ａ Ｇ 　Ａ Ｎ Ａ Ｌ Ｙ Ｓ Ｉ Ｓ？ (yes/no)： ").strip().lower()
+        use_ai = input("\n　Ｕ Ｓ Ｅ 　Ａ Ｉ 　Ｖ Ｉ Ｓ Ｕ Ａ Ｌ 　Ａ Ｎ Ａ Ｌ Ｙ Ｓ Ｉ Ｓ？ (yes/no)： ").strip().lower()
         if use_ai in ['yes', 'y']:
             gemini_key = getpass("　ＧＥＭＩＮＩ　ＡＰＩ　ＫＥＹ (hidden)： ")
     
