@@ -47,5 +47,12 @@
     "url": "https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap",
     "category": "monospace",
     "tags": ["contemporary","monospaced","futuristic"]
+  },
+  {
+    "name": "Protest Guerrilla",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap",
+    "category": "sans-serif",
+    "tags": ["brutalist","stenciled","modular","contemporary"]
   }
 ]
