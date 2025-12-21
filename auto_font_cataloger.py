@@ -379,11 +379,12 @@ Category: {category}
     def add_font_interactive(self):
         """Interactive prompt to add a new font"""
         print("\n" + "═" * 67)
-        print("　　　　　　　　░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ  █▓▒░")
+        print("░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ  █▓▒░")
         print("═" * 67)
         
         # Get font details
-        name = input("\n　ＦＯＮＴ ＮＡＭＥ：").strip()
+        print("\n　━━━ ＦＯＮＴ ＮＡＭＥ ━━━")
+        name = input("　　　＞ ").strip()
         
         print("\n　━━━ ＳＯＵＲＣＥ ━━━")
         print("　　　（google • custom • other）")
@@ -455,7 +456,7 @@ Category: {category}
         
         # Preview with compact formatting
         print("\n" + "═" * 67)
-        print("　　　　　　　　░▒▓█  ＰＲＥＶＩＥＷ  █▓▒░")
+        print("░▒▓█  ＰＲＥＶＩＥＷ  █▓▒░")
         print("═" * 67)
         preview_json = format_catalog_json([new_font])
         # Remove outer array brackets for single item preview
@@ -506,7 +507,7 @@ Category: {category}
 
 def main():
     print("\n" + "═" * 67)
-    print("　　　　　　░▒▓█  ＦＯＮＴ　ＣＡＴＡＬＯＧ　ＭＡＮＡＧＥＲ  █▓▒░")
+    print("░▒▓█  ＦＯＮＴ　ＣＡＴＡＬＯＧ　ＭＡＮＡＧＥＲ  █▓▒░")
     print("═" * 67)
     
     # Get credentials
