@@ -366,7 +366,7 @@ Category: {category}
                 print("　　　📡 Generating font specimen from URL...")
                 specimen_img = self.generate_font_specimen(name, source, url)
             
-            # Analyze based on AI type
+            # Analyze based on type
             if self.ai_type == "colab":
                 return self.analyze_font_with_colab_ai(name, source, url, category, specimen_img)
             elif self.ai_type == "gemini":
@@ -410,7 +410,7 @@ Category: {category}
             suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　👾 AI SUGGESTED TAGS: {', '.join(suggested_tags)}")
+                print(f"　　　👾 𝙰𝙸 𝚂𝚄𝙶𝙶𝙴𝚂𝚃𝙴𝙳 𝚃𝙰𝙶𝚂: {', '.join(suggested_tags)}")
                 print("\n　　　ＯＰＴＩＯＮＳ：")
                 print("　　　 • Press Enter to accept ALL")
                 print("　　　 • Type tag numbers to keep (e.g., 1,3,5)")
@@ -530,7 +530,7 @@ Category: {category}
                     print(f"　　　Tags: {', '.join(font['tags'])}")
                 
                 print("\n" + "═" * 67)
-                final_confirm = input(f"\n　ＣＯＭＭＩＴ　ＡＬＬ　{len(new_fonts)}　ＦＯＮＴＳ？ (yes/no)： ").strip().lower()
+                final_confirm = input(f"\n　Commit　all　{len(new_fonts)} fonts？(yes/no)：").strip().lower()
                 
                 if final_confirm in ['yes', 'y']:
                     # Add all fonts to catalog
