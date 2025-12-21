@@ -14,6 +14,9 @@
 　retro • android
 
 ═══════════════════════════════════════════════════════════════════
+　Ａｕｔｈｏｒ：　Duygu Dağdelen
+　Ｄａｔｅ：　　December 2024
+═══════════════════════════════════════════════════════════════════
 """
 
 import json
@@ -37,22 +40,21 @@ except ImportError:
         GEMINI_AVAILABLE = True
     except ImportError:
         GEMINI_AVAILABLE = False
-        print("⚠️  No AI available. Install: pip install google-generativeai pillow")
+        print("⚠  No AI available. Install: pip install google-generativeai pillow")
 
 
 class CompactJSONEncoder(json.JSONEncoder):
-    """Custom JSON encoder that keeps arrays on single lines"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.indent_level = 0
         
     def encode(self, obj):
         if isinstance(obj, list):
+            # Keep lists compact on one line
             return '[' + ','.join(json.dumps(item) for item in obj) + ']'
         return super().encode(obj)
     
     def iterencode(self, obj, _one_shot=False):
-        """Encode keeping lists compact"""
         if isinstance(obj, dict):
             yield '{\n'
             self.indent_level += 1
@@ -92,7 +94,6 @@ class CompactJSONEncoder(json.JSONEncoder):
 
 
 def format_catalog_json(catalog_data):
-    """Format catalog with compact arrays"""
     result = '[\n'
     for i, font in enumerate(catalog_data):
         result += '  {\n'
@@ -124,14 +125,14 @@ class FontCatalogManager:
             "Accept": "application/vnd.github.v3+json"
         }
         
-        # Initialize AI based on environment
+        # Initialize based on environment
         if self.use_ai:
             if COLAB_AI_AVAILABLE:
-                print("☑️ Using Colab AI")
+                print("✓ Using Colab AI")
                 self.ai_type = "colab"
                 self.model = None
             elif GEMINI_AVAILABLE and gemini_api_key:
-                print("☑️ Using Gemini API")
+                print("✓ Using Gemini API")
                 genai.configure(api_key=gemini_api_key)
                 self.model = genai.GenerativeModel('gemini-1.5-flash')
                 self.ai_type = "gemini"
@@ -144,7 +145,7 @@ class FontCatalogManager:
             self.model = None
     
     def get_current_catalog(self):
-        """Fetch the current catalog from GitHub"""
+        """Fetch the current catalog from repository"""
         response = requests.get(self.api_url, headers=self.headers, params={"ref": self.branch})
         
         if response.status_code == 200:
@@ -152,13 +153,12 @@ class FontCatalogManager:
             file_content = b64decode(content["content"]).decode("utf-8")
             return json.loads(file_content), content["sha"]
         elif response.status_code == 404:
-            print("⚠️  File not found. Will create new file.")
+            print("⚠  File not found. Will create new file.")
             return [], None
         else:
             raise Exception(f"Failed to fetch file: {response.status_code} - {response.text}")
     
     def update_catalog(self, catalog_data, sha, commit_message):
-        """Update the catalog on GitHub"""
         formatted_json = format_catalog_json(catalog_data)
         content_bytes = formatted_json.encode("utf-8")
         content_b64 = b64encode(content_bytes).decode("utf-8")
@@ -221,7 +221,7 @@ class FontCatalogManager:
             return img
             
         except Exception as e:
-            print(f"　　　⚠️  Could not generate specimen: {e}")
+            print(f"　　　⚠  Could not generate specimen: {e}")
             return None
     
     def get_google_font_specimen(self, font_name):
@@ -383,7 +383,7 @@ Category: {category}
         print("═" * 67)
         
         # Get font details
-        name = input("\n　ＦＯＮＴ ＮＡＭＥ： ").strip()
+        name = input("\n　ＦＯＮＴ ＮＡＭＥ：").strip()
         
         print("\n　━━━ ＳＯＵＲＣＥ ━━━")
         print("　　　（google • custom • other）")
@@ -405,7 +405,7 @@ Category: {category}
             suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　🤖 AI suggested tags: {', '.join(suggested_tags)}")
+                print(f"　　　👾 AI suggested tags: {', '.join(suggested_tags)}")
                 print("\n　　　ＯＰＴＩＯＮＳ：")
                 print("　　　 • Press Enter to accept ALL")
                 print("　　　 • Type tag numbers to keep (e.g., 1,3,5)")
@@ -421,20 +421,20 @@ Category: {category}
                 if not tags_input:
                     # Accept all
                     tags = suggested_tags
-                    print(f"　　　📜 Using all AI suggestions: {', '.join(tags)}")
+                    print(f"　　　✨ Using all AI suggestions: {', '.join(tags)}")
                 elif tags_input.replace(',', '').replace(' ', '').isdigit():
                     # Tag numbers selected
                     try:
                         selected_indices = [int(x.strip()) for x in tags_input.split(',')]
                         tags = [suggested_tags[i-1] for i in selected_indices if 1 <= i <= len(suggested_tags)]
-                        print(f"　　　📜 Selected tags: {', '.join(tags)}")
+                        print(f"　　　✨ Selected tags: {', '.join(tags)}")
                     except (ValueError, IndexError):
-                        print("　　　⚠️  Invalid selection, using all suggestions")
+                        print("　　　⚠  Invalid selection, using all suggestions")
                         tags = suggested_tags
                 else:
                     # Custom tags entered
                     tags = [tag.strip().lower() for tag in tags_input.split(",") if tag.strip()]
-                    print(f"　　　📜 Using custom tags: {', '.join(tags)}")
+                    print(f"　　　✨ Using custom tags: {', '.join(tags)}")
             else:
                 print("　　　（Enter comma-separated tags）")
                 tags_input = input("　　　＞ ").strip()
@@ -475,9 +475,9 @@ Category: {category}
         """Main execution flow"""
         try:
             # Fetch current catalog
-            print("\n📡 Fetching current catalog from repository...")
+            print("\n📡 Fetching current catalog...")
             catalog, sha = self.get_current_catalog()
-            print(f"☑️ Found {len(catalog)} existing fonts")
+            print(f"✓ Found {len(catalog)} existing fonts")
             
             # Add new font interactively
             new_font = self.add_font_interactive()
@@ -485,7 +485,7 @@ Category: {category}
             if new_font:
                 # Check for duplicates
                 if any(font["name"] == new_font["name"] for font in catalog):
-                    print(f"\n⚠️  Font '{new_font['name']}' already exists!")
+                    print(f"\n⚠  Font '{new_font['name']}' already exists!")
                     overwrite = input("　ＯＶＥＲＷＲＩＴＥ？ (yes/no)： ").strip().lower()
                     if overwrite in ['yes', 'y']:
                         catalog = [f for f in catalog if f["name"] != new_font["name"]]
@@ -501,7 +501,7 @@ Category: {category}
                 print(f"🎊 Successfully added '{new_font['name']}' to catalog!")
                 
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"✗ Error: {e}")
 
 
 def main():
@@ -510,34 +510,34 @@ def main():
     print("═" * 67)
     
     # Get credentials
-    token = getpass("\n　ＧＩＴＨＵＢ　ＰＡＴ (hidden)： ")
+    token = getpass("\n　ＧＩＴＨＵＢ　ＰＡＴ： ")
     
     # Get repository in format username/repo-name
     while True:
-        repo_full = input("\n　ＤＥＳＴＩＮＡＴＩＯＮ (username/repo-name)： ").strip()
+        repo_full = input("\n🗄 Target repo (username/repo-name)： ").strip()
         if "/" in repo_full:
             repo_owner, repo_name = repo_full.split("/", 1)
             repo_owner = repo_owner.strip()
             repo_name = repo_name.strip()
             if repo_owner and repo_name:
                 break
-        print("　❌ Invalid format. Use: username/repo-name")
+        print("　✗ Invalid format. Use: username/repo-name")
     
     # Optional: custom file path and branch
-    file_path = input("\n　ＦＩＬＥ　ＰＡＴＨ (default: catalog.fonts.json)： ").strip() or "catalog.fonts.json"
-    branch = input("　ＢＲＡＮＣＨ (default: main)： ").strip() or "main"
+    file_path = input("\n🗃 File Path [default=catalog.fonts.json]:").strip() or "catalog.fonts.json"
+    branch = input("🪜 Branch [default=main]:").strip() or "main"
     
     # AI configuration
     use_ai = True
     gemini_key = None
     
     if COLAB_AI_AVAILABLE:
-        use_ai_input = input("\n　Ｕ Ｓ Ｅ 　Ａ Ｉ 　ＶＩＳＵＡＬ 　Ａ Ｎ Ａ Ｌ Ｙ Ｓ Ｉ Ｓ？ (yes/no)： ").strip().lower()
+        use_ai_input = input("\n　Use AI visual analysis? (yes/no)：").strip().lower()
         use_ai = use_ai_input in ['yes', 'y', '']
     elif GEMINI_AVAILABLE:
-        use_ai_input = input("\n　Ｕ Ｓ Ｅ 　Ａ Ｉ 　ＶＩＳＵＡＬ 　Ａ Ｎ Ａ Ｌ Ｙ Ｓ Ｉ Ｓ？ (yes/no)： ").strip().lower()
+        use_ai_input = input("\n　Use AI visual analysis？(yes/no)：").strip().lower()
         if use_ai_input in ['yes', 'y']:
-            gemini_key = getpass("　ＧＥＭＩＮＩ　ＡＰＩ　ＫＥＹ (hidden)： ")
+            gemini_key = getpass("🗝　Gemini API Key：")
             use_ai = True
         else:
             use_ai = False
