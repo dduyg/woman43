@@ -40,5 +40,12 @@
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/SFProText-Regular.woff2",
     "category": "sans-serif",
     "tags": ["modular","business","clean"]
+  },
+  {
+    "name": "Nova Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap",
+    "category": "monospace",
+    "tags": ["contemporary","monospaced","futuristic"]
   }
 ]
