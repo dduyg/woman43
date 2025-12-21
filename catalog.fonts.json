@@ -61,5 +61,19 @@
     "url": "https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap",
     "category": "sans-serif",
     "tags": ["contemporary","aesthetic","geometric"]
+  },
+  {
+    "name": "Syncopate",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Syncopate&display=swap",
+    "category": "sans-serif",
+    "tags": ["futuristic","clean","modular"]
+  },
+  {
+    "name": "Audiowide",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Audiowide&display=swap",
+    "category": "sans-serif",
+    "tags": ["futuristic","techno","modular"]
   }
 ]
