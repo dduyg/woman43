@@ -21,14 +21,16 @@ import requests
 from getpass import getpass
 from base64 import b64encode, b64decode
 import io
+from PIL import Image, ImageDraw, ImageFont
+import tempfile
+import os
 
 try:
     import google.generativeai as genai
-    from PIL import Image, ImageDraw, ImageFont
     GEMINI_AVAILABLE = True
 except ImportError:
     GEMINI_AVAILABLE = False
-    print("⚠️  google-generativeai or PIL not installed. AI features disabled.")
+    print("⚠︎  google-generativeai not installed. AI features disabled.")
     print("   Install with: pip install google-generativeai pillow")
 
 
@@ -63,7 +65,7 @@ class FontCatalogManager:
             file_content = b64decode(content["content"]).decode("utf-8")
             return json.loads(file_content), content["sha"]
         elif response.status_code == 404:
-            print("⚠️  File not found. Will create new file.")
+            print("⚠︎  File not found. Will create new file.")
             return [], None
         else:
             raise Exception(f"Failed to fetch file: {response.status_code} - {response.text}")
@@ -85,133 +87,162 @@ class FontCatalogManager:
         response = requests.put(self.api_url, headers=self.headers, json=payload)
         
         if response.status_code in [200, 201]:
-            print("✅ Catalog updated successfully!")
+            print("☑️ Catalog updated successfully!")
             return True
         else:
             raise Exception(f"Failed to update file: {response.status_code} - {response.text}")
     
-    def get_google_font_specimen(self, font_name):
-        """Generate a visual specimen for Google Fonts"""
+    def generate_font_specimen(self, name, source, url):
+        """Generate a font specimen image for visual analysis"""
         try:
-            # Try to get the font specimen from Google Fonts
-            safe_name = font_name.replace(' ', '+')
-            specimen_url = f"https://fonts.gstatic.com/s/a/{safe_name}.png"
+            # Download font file
+            response = requests.get(url, timeout=10)
+            if response.status_code != 200:
+                return None
+            
+            # Save temporarily
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.ttf') as tmp:
+                tmp.write(response.content)
+                tmp_path = tmp.name
+            
+            # Create specimen image
+            img = Image.new('RGB', (800, 400), color='white')
+            draw = ImageDraw.Draw(img)
+            
+            try:
+                # Try to load the font
+                font_large = ImageFont.truetype(tmp_path, 72)
+                font_medium = ImageFont.truetype(tmp_path, 48)
+                font_small = ImageFont.truetype(tmp_path, 32)
+            except:
+                # If font loading fails, return None
+                os.unlink(tmp_path)
+                return None
+            
+            # Draw text specimens
+            draw.text((20, 20), "AaBbCc 123", fill='black', font=font_large)
+            draw.text((20, 120), "The quick brown fox", fill='black', font=font_medium)
+            draw.text((20, 180), "jumps over the lazy dog", fill='black', font=font_medium)
+            draw.text((20, 250), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", fill='black', font=font_small)
+            draw.text((20, 300), "abcdefghijklmnopqrstuvwxyz", fill='black', font=font_small)
+            draw.text((20, 350), "0123456789 !@#$%^&*()", fill='black', font=font_small)
+            
+            # Clean up temp file
+            os.unlink(tmp_path)
+            
+            return img
+            
+        except Exception as e:
+            print(f"　　　⚠︎  Could not generate specimen: {e}")
+            return None
+    
+    def get_google_font_specimen(self, font_name):
+        """Try to get Google Fonts specimen image"""
+        try:
+            # Google Fonts specimen API
+            font_name_clean = font_name.replace(' ', '+')
+            specimen_url = f"https://fonts.gstatic.com/s/{font_name.lower().replace(' ', '')}/v1/specimen.png"
             
             response = requests.get(specimen_url, timeout=5)
             if response.status_code == 200:
                 return Image.open(io.BytesIO(response.content))
             
-            # Alternative: Google Fonts specimen sheet
-            alt_url = f"https://fonts.google.com/specimen/{safe_name}"
-            # This won't give us direct image, so we'll use text rendering instead
+            # Alternative: Generate preview using Google Fonts API
+            preview_url = f"https://fonts.googleapis.com/css2?family={font_name_clean}:wght@400;700&text=AaBbCc123QuickBrownFox&display=swap"
+            # This won't give us an image, so we'll skip for now
             
             return None
-        except Exception as e:
-            print(f"　　　⚠️  Could not fetch Google Font specimen: {e}")
-            return None
-    
-    def generate_font_specimen(self, font_name, source, url):
-        """Generate a text specimen image showing how the font looks"""
-        try:
-            # Create a specimen image with sample text
-            img = Image.new('RGB', (800, 400), color='white')
-            draw = ImageDraw.Draw(img)
-            
-            # Sample text to show font characteristics
-            sample_text = [
-                f"{font_name}",
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-                "abcdefghijklmnopqrstuvwxyz",
-                "0123456789 !@#$%&*()_+-=",
-                "The quick brown fox jumps over the lazy dog"
-            ]
-            
-            # For now, use default font (we'll let Gemini analyze from URL or name)
-            # In production, you'd download and render the actual font
-            y_position = 20
-            for text in sample_text:
-                draw.text((20, y_position), text, fill='black')
-                y_position += 70
-            
-            return img
-        except Exception as e:
-            print(f"　　　⚠️  Could not generate specimen: {e}")
+        except:
             return None
     
     def analyze_font_visually(self, name, source, url, category):
-        """Use Gemini to visually analyze the font's appearance"""
+        """Use Gemini to visually analyze font appearance"""
         if not self.model:
             return []
         
         try:
-            # Try to get visual specimen
-            font_image = None
+            # Try to get font specimen image
+            specimen_img = None
             
             if source == "google":
-                # For Google Fonts, try to get official specimen
-                font_image = self.get_google_font_specimen(name)
+                print("　　　📸 Fetching Google Fonts specimen...")
+                specimen_img = self.get_google_font_specimen(name)
+            
+            if not specimen_img and url:
+                print("　　　📸 Generating font specimen from URL...")
+                specimen_img = self.generate_font_specimen(name, source, url)
             
             # If we have an image, analyze it visually
-            if font_image:
-                prompt = """Analyze this font specimen image carefully and describe ONLY what you see visually.
+            if specimen_img:
+                prompt = """Analyze this font specimen image and describe its VISUAL aesthetic characteristics.
 
-Look at the actual letterforms and identify:
-- **Structure**: Is it geometric (constructed from circles/squares), organic (flowing/natural), modular (repeating shapes), grotesque (industrial), or humanist (calligraphic influence)?
-- **Terminals**: Are the letter endings rounded, sharp, square, or angled?
-- **Weight & Width**: Is it light, regular, bold, condensed, or extended?
-- **Character Spacing**: Is it monospaced (fixed-width like coding fonts) or proportional?
-- **X-height**: Is it tall or short compared to ascenders/descenders?
-- **Stroke Contrast**: Is there high contrast (thick/thin variation) or low contrast (uniform)?
-- **Style Period**: Does it look retro (70s/80s/90s), vintage (pre-1950s), contemporary (modern clean), or futuristic?
-- **Mood**: Does it feel playful, serious, warm, cold, technical, elegant, casual, distressed?
-- **Special Features**: Any unique characteristics like pixelation, distressing, decorative elements, hand-drawn quality?
+Look at the actual letterforms and identify 3-5 precise aesthetic tags based on what you SEE:
 
-Based ONLY on the visual appearance, generate 3-5 precise aesthetic tags.
+VISUAL STRUCTURE:
+- Is it geometric (precise circles/squares) or organic (flowing curves)?
+- Is it modular (built from repeated shapes) or varied?
+- Is it monospaced (equal character width) or proportional?
+- Are terminals rounded, sharp, or squared?
 
-Return ONLY comma-separated tags with no explanation.
-Example: geometric, brutalist, contemporary, monospaced, coding"""
+STYLE & MOOD:
+- Does it look retro (70s/80s), futuristic, contemporary, or vintage?
+- Is it playful, serious, calm, energetic, sophisticated?
+- Does it feel warm (friendly curves) or cold (technical angles)?
 
-                response = self.model.generate_content([prompt, font_image])
+SPECIAL CHARACTERISTICS:
+- Brutalist (raw, harsh), clean (minimal), distressed (worn)?
+- Handwritten, pixel-art, medieval, art nouveau style?
+- Formal/business or casual/playful?
+- Any unique traits: blobby, wacky, horror, stiff, etc.?
+
+Reference tags (use these as inspiration but create your own if needed):
+geometric, formal, handwritten, fatface, monospaced, techno, pixel, medieval, art nouveau, blobby, distressed, wood, wacky, shaded, marker, futuristic, vintage, calm, playful, sophisticated, business, stiff, childlike, horror, distorted, clean, warm, aesthetic, brutalist, modular, neutral, contemporary, rounded, approachable, humanist, coding, retro, android
+
+Return ONLY 3-5 tags as a comma-separated list based on VISUAL APPEARANCE, no explanation.
+Example: geometric, brutalist, contemporary, clean, modular"""
+
+                response = self.model.generate_content([prompt, specimen_img])
+                tags_text = response.text.strip()
                 
             else:
-                # Fallback: Use URL analysis for custom fonts or if image unavailable
-                prompt = f"""Analyze how this font likely looks based on its URL and context:
+                # Fallback: text-based analysis with emphasis on inferring visual traits
+                print("　　　🔍 Analyzing based on metadata (no visual specimen available)...")
+                prompt = f"""Based on this font metadata, infer its likely VISUAL aesthetic characteristics:
 
 Font Name: {name}
 Source: {source}
 Category: {category}
-URL: {url}
 
-From the URL path, font name, and category, infer the visual aesthetic:
-- For ".woff2" custom fonts, analyze the filename for clues
-- For Google Fonts, consider typical characteristics of that family
-- For monospace category, it's likely coding-oriented
-- Look for keywords in the name/URL like: rounded, condensed, display, text, mono, etc.
+Analyze the name and category to infer 3-5 aesthetic tags describing how this font likely LOOKS visually.
 
-Generate 3-5 tags describing the VISUAL APPEARANCE:
-- Structure: geometric, organic, humanist, grotesque, modular
-- Style: retro, vintage, contemporary, futuristic, medieval
-- Mood: playful, serious, calm, energetic, warm, cold
-- Features: rounded, sharp, distressed, clean, monospaced, pixel
-- Use: coding, display, formal, casual, technical, artistic
+Consider common visual patterns:
+- Names with "Mono", "Code", "Terminal" → likely monospaced, coding
+- Names with "Rounded", "Soft" → likely rounded, approachable
+- Names with "Grotesk", "Brutal" → likely brutalist, geometric
+- Sans-serif category → often clean, neutral, contemporary
+- Serif category → often formal, sophisticated
+- Monospace category → coding, technical, monospaced
+- Display category → often decorative, playful, or dramatic
 
-Return ONLY comma-separated tags.
-Example: geometric, contemporary, clean, neutral, business"""
+Reference tags (use as inspiration, create your own if needed):
+geometric, formal, handwritten, fatface, monospaced, techno, pixel, medieval, art nouveau, blobby, distressed, wood, wacky, shaded, marker, futuristic, vintage, calm, playful, sophisticated, business, stiff, childlike, horror, distorted, clean, warm, aesthetic, brutalist, modular, neutral, contemporary, rounded, approachable, humanist, coding, retro, android
+
+Return ONLY 3-5 tags as comma-separated list, no explanation.
+Example: monospaced, coding, clean"""
 
                 response = self.model.generate_content(prompt)
-            
-            tags_text = response.text.strip()
+                tags_text = response.text.strip()
             
             # Clean up response
-            tags_text = tags_text.replace('*', '').replace('`', '').replace('#', '').strip()
+            tags_text = tags_text.replace('*', '').replace('`', '').replace('"', '').strip()
             
-            # Parse the response
+            # Parse tags
             suggested_tags = [tag.strip().lower() for tag in tags_text.split(',') if tag.strip()]
             
-            return suggested_tags[:5]  # Limit to 5 tags
+            return suggested_tags[:5]
             
         except Exception as e:
-            print(f"　　　⚠️  AI analysis error: {e}")
+            print(f"　　　🤷‍♀️ Oops, AI analysis error: {e}")
             return []
     
     def add_font_interactive(self):
@@ -221,7 +252,7 @@ Example: geometric, contemporary, clean, neutral, business"""
         print("═" * 67)
         
         # Get font details
-        name = input("\n　Ｆ Ｏ Ｎ Ｔ 　Ｎ Ａ Ｍ Ｅ ： ").strip()
+        name = input("\n　F O N T  N A M E： ").strip()
         
         print("\n　━━━ ＳＯＵＲＣＥ ━━━")
         print("　　　（google • custom • other）")
@@ -234,16 +265,16 @@ Example: geometric, contemporary, clean, neutral, business"""
         print("　　　（sans-serif • serif • monospace • display • handwriting）")
         category = input("　　　＞ ").strip().lower()
         
-        # AI-powered visual tag analysis
+        # AI-powered VISUAL tag suggestion
         print("\n　━━━ ＴＡＧＳ ━━━")
         suggested_tags = []
         
         if self.model:
-            print("　　　🤖 Analyzing font visual appearance...")
+            print("　　　📡 Analyzing font visual aesthetics with AI...")
             suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　💡 AI Detected Visual Style: {', '.join(suggested_tags)}")
+                print(f"　　　🪞 AI Suggested (based on visual analysis): {', '.join(suggested_tags)}")
                 print("　　　（Press Enter to accept, or type your own comma-separated tags）")
             else:
                 print("　　　（Enter comma-separated tags）")
@@ -289,7 +320,7 @@ Example: geometric, contemporary, clean, neutral, business"""
             # Fetch current catalog
             print("\n🔍 Fetching current catalog from GitHub...")
             catalog, sha = self.get_current_catalog()
-            print(f"✅ Found {len(catalog)} existing fonts")
+            print(f"☑️ Found {len(catalog)} existing fonts")
             
             # Add new font interactively
             new_font = self.add_font_interactive()
@@ -297,7 +328,7 @@ Example: geometric, contemporary, clean, neutral, business"""
             if new_font:
                 # Check for duplicates
                 if any(font["name"] == new_font["name"] for font in catalog):
-                    print(f"\n⚠️  Font '{new_font['name']}' already exists!")
+                    print(f"\n⚠︎  Font '{new_font['name']}' already exists!")
                     overwrite = input("　ＯＶＥＲＷＲＩＴＥ？ (yes/no)： ").strip().lower()
                     if overwrite in ['yes', 'y']:
                         catalog = [f for f in catalog if f["name"] != new_font["name"]]
@@ -310,9 +341,9 @@ Example: geometric, contemporary, clean, neutral, business"""
                 
                 # Update on GitHub
                 commit_msg = f"Add {new_font['name']} to font catalog"
-                print(f"\n📤 Uploading to GitHub...")
+                print(f"\n📤 Committing to repository...")
                 self.update_catalog(catalog, sha, commit_msg)
-                print(f"🎉 Successfully added '{new_font['name']}' to catalog!")
+                print(f"🎊 Successfully added '{new_font['name']}' to catalog!")
                 
         except Exception as e:
             print(f"❌ Error: {e}")
@@ -344,7 +375,7 @@ def main():
     # Optional: Gemini API for AI tag suggestions
     gemini_key = None
     if GEMINI_AVAILABLE:
-        use_ai = input("\n　Ｕ Ｓ Ｅ 　Ａ Ｉ 　Ｖ Ｉ Ｓ Ｕ Ａ Ｌ 　Ａ Ｎ Ａ Ｌ Ｙ Ｓ Ｉ Ｓ？ (yes/no)： ").strip().lower()
+        use_ai = input("\n　Ｕ Ｓ Ｅ 　Ａ Ｉ 　ＶＩＳＵＡＬ 　Ａ Ｎ Ａ Ｌ Ｙ Ｓ Ｉ Ｓ？ (yes/no)： ").strip().lower()
         if use_ai in ['yes', 'y']:
             gemini_key = getpass("　ＧＥＭＩＮＩ　ＡＰＩ　ＫＥＹ (hidden)： ")
     
