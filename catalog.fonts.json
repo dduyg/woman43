@@ -4,14 +4,14 @@
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
     "category": "sans-serif",
-    "tags": ["modern","clean","google"]
+    "tags": ["modern","clean","formal"]
   },
   {
     "name": "Grotta",
     "source": "custom",
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Grotta-Regular.woff2",
     "category": "sans-serif",
-    "tags": ["custom","display","grotta"]
+    "tags": ["geometric","brutalist","modular"]
   },
   {
     "name": "Host Grotesk",
