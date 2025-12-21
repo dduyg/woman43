@@ -405,14 +405,14 @@ Category: {category}
             suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　👾 AI suggested tags: {', '.join(suggested_tags)}")
+                print(f"　　　👾 AI SUGGESTED TAGS: {', '.join(suggested_tags)}")
                 print("\n　　　ＯＰＴＩＯＮＳ：")
                 print("　　　 • Press Enter to accept ALL")
                 print("　　　 • Type tag numbers to keep (e.g., 1,3,5)")
                 print("　　　 • Type your own tags (comma-separated)")
                 
                 # Display numbered tags
-                print("\n　　　ＳＵＧＧＥＳＴＥＤ　ＴＡＧＳ：")
+                print("\n　　　🏷️ ＳＵＧＧＥＳＴＥＤ　ＴＡＧＳ：")
                 for i, tag in enumerate(suggested_tags, 1):
                     print(f"　　　　{i}. {tag}")
                 
@@ -421,20 +421,20 @@ Category: {category}
                 if not tags_input:
                     # Accept all
                     tags = suggested_tags
-                    print(f"　　　✨ Using all AI suggestions: {', '.join(tags)}")
+                    print(f"　　　📜 Using all AI suggestions: {', '.join(tags)}")
                 elif tags_input.replace(',', '').replace(' ', '').isdigit():
                     # Tag numbers selected
                     try:
                         selected_indices = [int(x.strip()) for x in tags_input.split(',')]
                         tags = [suggested_tags[i-1] for i in selected_indices if 1 <= i <= len(suggested_tags)]
-                        print(f"　　　✨ Selected tags: {', '.join(tags)}")
+                        print(f"　　　📜 Selected tags: {', '.join(tags)}")
                     except (ValueError, IndexError):
                         print("　　　⚠  Invalid selection, using all suggestions")
                         tags = suggested_tags
                 else:
                     # Custom tags entered
                     tags = [tag.strip().lower() for tag in tags_input.split(",") if tag.strip()]
-                    print(f"　　　✨ Using custom tags: {', '.join(tags)}")
+                    print(f"　　　📜 Using custom tags: {', '.join(tags)}")
             else:
                 print("　　　（Enter comma-separated tags）")
                 tags_input = input("　　　＞ ").strip()
@@ -498,7 +498,7 @@ Category: {category}
                 commit_msg = f"Add {new_font['name']} to font catalog"
                 print(f"\n🌀 Committing to catalog...")
                 self.update_catalog(catalog, sha, commit_msg)
-                print(f"🎊 Successfully added '{new_font['name']}' to catalog!")
+                print(f"╰┈➤ 🎊 Successfully added '{new_font['name']}' to catalog!")
                 
         except Exception as e:
             print(f"✗ Error: {e}")
@@ -510,11 +510,11 @@ def main():
     print("═" * 67)
     
     # Get credentials
-    token = getpass("\n　ＧＩＴＨＵＢ　ＰＡＴ： ")
+    token = getpass("\n🗝 GitHub Access Token：")
     
     # Get repository in format username/repo-name
     while True:
-        repo_full = input("\n🗄 Target repo (username/repo-name)： ").strip()
+        repo_full = input("\n🗄 Select repository (username/repo-name)： ").strip()
         if "/" in repo_full:
             repo_owner, repo_name = repo_full.split("/", 1)
             repo_owner = repo_owner.strip()
@@ -524,7 +524,7 @@ def main():
         print("　✗ Invalid format. Use: username/repo-name")
     
     # Optional: custom file path and branch
-    file_path = input("\n🗃 File Path [default=catalog.fonts.json]:").strip() or "catalog.fonts.json"
+    file_path = input("\n🗃 Select file [default=catalog.fonts.json]:").strip() or "catalog.fonts.json"
     branch = input("🪜 Branch [default=main]:").strip() or "main"
     
     # AI configuration
@@ -532,10 +532,10 @@ def main():
     gemini_key = None
     
     if COLAB_AI_AVAILABLE:
-        use_ai_input = input("\n　Use AI visual analysis? (yes/no)：").strip().lower()
+        use_ai_input = input("\n👾 Use AI visual analysis? (yes/no)：").strip().lower()
         use_ai = use_ai_input in ['yes', 'y', '']
     elif GEMINI_AVAILABLE:
-        use_ai_input = input("\n　Use AI visual analysis？(yes/no)：").strip().lower()
+        use_ai_input = input("\n👾 Use AI visual analysis？(yes/no)：").strip().lower()
         if use_ai_input in ['yes', 'y']:
             gemini_key = getpass("🗝　Gemini API Key：")
             use_ai = True
