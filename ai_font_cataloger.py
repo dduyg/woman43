@@ -29,7 +29,6 @@ import os
 try:
     from google.colab import ai
     COLAB_AI_AVAILABLE = True
-    AI_MODEL = None
 except ImportError:
     COLAB_AI_AVAILABLE = False
     # Fallback to regular Gemini API
@@ -59,16 +58,16 @@ class FontCatalogManager:
         # Initialize AI based on environment
         if self.use_ai:
             if COLAB_AI_AVAILABLE:
-                print("✅ Using Google Colab AI (free!)")
+                print("✔️ Using Colab AI")
                 self.ai_type = "colab"
-                self.model = None  # Colab AI doesn't need model initialization
+                self.model = None
             elif GEMINI_AVAILABLE and gemini_api_key:
-                print("✅ Using Gemini API")
+                print("✔️ Using Gemini API")
                 genai.configure(api_key=gemini_api_key)
                 self.model = genai.GenerativeModel('gemini-1.5-flash')
                 self.ai_type = "gemini"
             else:
-                print("⚠️  AI not available")
+                print("🗿  AI not available")
                 self.ai_type = None
                 self.model = None
         else:
@@ -106,7 +105,7 @@ class FontCatalogManager:
         response = requests.put(self.api_url, headers=self.headers, json=payload)
         
         if response.status_code in [200, 201]:
-            print("✅ Catalog updated successfully!")
+            print("☑️ Catalog updated successfully!")
             return True
         else:
             raise Exception(f"Failed to update file: {response.status_code} - {response.text}")
@@ -159,7 +158,6 @@ class FontCatalogManager:
         """Try to get Google Fonts specimen image"""
         try:
             # Google Fonts specimen
-            font_name_clean = font_name.replace(' ', '+')
             specimen_url = f"https://fonts.gstatic.com/s/{font_name.lower().replace(' ', '')}/v1/specimen.png"
             
             response = requests.get(specimen_url, timeout=5)
@@ -201,26 +199,14 @@ Return ONLY 3-5 tags as a comma-separated list based on VISUAL APPEARANCE, no ex
 Example: geometric, brutalist, contemporary, clean, modular"""
 
             if specimen_img:
-                # Visual analysis with image
-                # Convert PIL Image to bytes for Colab AI
-                img_byte_arr = io.BytesIO()
-                specimen_img.save(img_byte_arr, format='PNG')
-                img_byte_arr = img_byte_arr.getvalue()
-                
-                # Colab AI expects different format - use text-only for now
-                # Image support may vary, so fallback to text description
-                prompt = f"""Font specimen image shows: {name}
+                prompt = f"""Font Name: {name}
 Category: {category}
 Source: {source}
 
+A visual specimen of this font is available showing letterforms.
+
 {prompt_base}"""
-                
-                response = ai.generate_text(
-                    prompt=prompt,
-                    model='google/gemini-2.5-flash'
-                )
             else:
-                # Text-based inference
                 prompt = f"""Based on this font metadata, infer its likely VISUAL aesthetic:
 
 Font Name: {name}
@@ -228,11 +214,9 @@ Source: {source}
 Category: {category}
 
 {prompt_base}"""
-                
-                response = ai.generate_text(
-                    prompt=prompt,
-                    model='google/gemini-2.5-flash'
-                )
+            
+            # Call Colab AI (no model parameter needed)
+            response = ai.generate_text(prompt=prompt)
             
             # Parse response
             tags_text = response.strip().replace('*', '').replace('`', '').replace('"', '')
@@ -241,7 +225,7 @@ Category: {category}
             return suggested_tags[:5]
             
         except Exception as e:
-            print(f"　　　⚠️  Colab AI error: {e}")
+            print(f"　　　🤷‍♀️ Oops, Colab AI error: {e}")
             return []
     
     def analyze_font_with_gemini(self, name, source, url, category, specimen_img=None):
@@ -305,11 +289,11 @@ Category: {category}
             specimen_img = None
             
             if source == "google":
-                print("　　　📸 Fetching Google Fonts specimen...")
+                print("　　　📡 Fetching Google Fonts specimen...")
                 specimen_img = self.get_google_font_specimen(name)
             
             if not specimen_img and url:
-                print("　　　📸 Generating font specimen from URL...")
+                print("　　　📡 Generating font specimen from URL...")
                 specimen_img = self.generate_font_specimen(name, source, url)
             
             # Analyze based on AI type
@@ -319,7 +303,7 @@ Category: {category}
                 return self.analyze_font_with_gemini(name, source, url, category, specimen_img)
             
         except Exception as e:
-            print(f"　　　⚠️  AI analysis error: {e}")
+            print(f"　　　🤷‍♀️ Oops,  AI analysis error: {e}")
             return []
     
     def add_font_interactive(self):
@@ -329,7 +313,7 @@ Category: {category}
         print("═" * 67)
         
         # Get font details
-        name = input("\n　Ｆ Ｏ Ｎ Ｔ 　Ｎ Ａ Ｍ Ｅ ： ").strip()
+        name = input("\n　ＦＯＮＴ ＮＡＭＥ： ").strip()
         
         print("\n　━━━ ＳＯＵＲＣＥ ━━━")
         print("　　　（google • custom • other）")
@@ -347,11 +331,11 @@ Category: {category}
         suggested_tags = []
         
         if self.ai_type:
-            print("　　　🤖 Analyzing font VISUAL aesthetics with AI...")
+            print("　　　🌀 Analyzing font visual aesthetics with AI...")
             suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　💡 AI Suggested (based on visual analysis): {', '.join(suggested_tags)}")
+                print(f"　　　📜 AI Suggested: {', '.join(suggested_tags)}")
                 print("　　　（Press Enter to accept, or type your own comma-separated tags）")
             else:
                 print("　　　（Enter comma-separated tags）")
@@ -395,9 +379,9 @@ Category: {category}
         """Main execution flow"""
         try:
             # Fetch current catalog
-            print("\n🔍 Fetching current catalog from GitHub...")
+            print("\n📡 Fetching current catalog from repository...")
             catalog, sha = self.get_current_catalog()
-            print(f"✅ Found {len(catalog)} existing fonts")
+            print(f"✔️ Found {len(catalog)} existing fonts")
             
             # Add new font interactively
             new_font = self.add_font_interactive()
@@ -418,9 +402,9 @@ Category: {category}
                 
                 # Update on GitHub
                 commit_msg = f"Add {new_font['name']} to font catalog"
-                print(f"\n📤 Uploading to GitHub...")
+                print(f"\n🌀 Committing to repository...")
                 self.update_catalog(catalog, sha, commit_msg)
-                print(f"🎉 Successfully added '{new_font['name']}' to catalog!")
+                print(f"🎊 Successfully added '{new_font['name']}' to catalog!")
                 
         except Exception as e:
             print(f"❌ Error: {e}")
