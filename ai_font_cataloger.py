@@ -25,19 +25,88 @@ from PIL import Image, ImageDraw, ImageFont
 import tempfile
 import os
 
-# Check if running in Colab
+# Check running environment
 try:
     from google.colab import ai
     COLAB_AI_AVAILABLE = True
 except ImportError:
     COLAB_AI_AVAILABLE = False
-    # Fallback to regular Gemini API
+    # Fallback to Gemini API
     try:
         import google.generativeai as genai
         GEMINI_AVAILABLE = True
     except ImportError:
         GEMINI_AVAILABLE = False
         print("⚠️  No AI available. Install: pip install google-generativeai pillow")
+
+
+class CompactJSONEncoder(json.JSONEncoder):
+    """Custom JSON encoder that keeps arrays on single lines"""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.indent_level = 0
+        
+    def encode(self, obj):
+        if isinstance(obj, list):
+            return '[' + ','.join(json.dumps(item) for item in obj) + ']'
+        return super().encode(obj)
+    
+    def iterencode(self, obj, _one_shot=False):
+        """Encode keeping lists compact"""
+        if isinstance(obj, dict):
+            yield '{\n'
+            self.indent_level += 1
+            items = list(obj.items())
+            for i, (key, value) in enumerate(items):
+                yield ' ' * (self.indent_level * 2)
+                yield json.dumps(key) + ': '
+                if isinstance(value, list):
+                    yield '[' + ','.join(json.dumps(item) for item in value) + ']'
+                elif isinstance(value, dict):
+                    for chunk in self.iterencode(value):
+                        yield chunk
+                else:
+                    yield json.dumps(value)
+                if i < len(items) - 1:
+                    yield ','
+                yield '\n'
+            self.indent_level -= 1
+            yield ' ' * (self.indent_level * 2) + '}'
+        elif isinstance(obj, list):
+            yield '[\n'
+            self.indent_level += 1
+            for i, item in enumerate(obj):
+                yield ' ' * (self.indent_level * 2)
+                if isinstance(item, dict):
+                    for chunk in self.iterencode(item):
+                        yield chunk
+                else:
+                    yield json.dumps(item)
+                if i < len(obj) - 1:
+                    yield ','
+                yield '\n'
+            self.indent_level -= 1
+            yield ' ' * (self.indent_level * 2) + ']'
+        else:
+            yield json.dumps(obj)
+
+
+def format_catalog_json(catalog_data):
+    """Format catalog with compact arrays"""
+    result = '[\n'
+    for i, font in enumerate(catalog_data):
+        result += '  {\n'
+        result += f'    "name": {json.dumps(font["name"])},\n'
+        result += f'    "source": {json.dumps(font["source"])},\n'
+        result += f'    "url": {json.dumps(font["url"])},\n'
+        result += f'    "category": {json.dumps(font["category"])},\n'
+        result += f'    "tags": [{",".join(json.dumps(tag) for tag in font["tags"])}]\n'
+        result += '  }'
+        if i < len(catalog_data) - 1:
+            result += ','
+        result += '\n'
+    result += ']'
+    return result
 
 
 class FontCatalogManager:
@@ -58,16 +127,16 @@ class FontCatalogManager:
         # Initialize AI based on environment
         if self.use_ai:
             if COLAB_AI_AVAILABLE:
-                print("✅ Using Google Colab AI (free!)")
+                print("☑️ Using Colab AI")
                 self.ai_type = "colab"
                 self.model = None
             elif GEMINI_AVAILABLE and gemini_api_key:
-                print("✅ Using Gemini API")
+                print("☑️ Using Gemini API")
                 genai.configure(api_key=gemini_api_key)
                 self.model = genai.GenerativeModel('gemini-1.5-flash')
                 self.ai_type = "gemini"
             else:
-                print("⚠️  AI not available")
+                print("🗿  AI not available")
                 self.ai_type = None
                 self.model = None
         else:
@@ -90,7 +159,8 @@ class FontCatalogManager:
     
     def update_catalog(self, catalog_data, sha, commit_message):
         """Update the catalog on GitHub"""
-        content_bytes = json.dumps(catalog_data, indent=2, ensure_ascii=False).encode("utf-8")
+        formatted_json = format_catalog_json(catalog_data)
+        content_bytes = formatted_json.encode("utf-8")
         content_b64 = b64encode(content_bytes).decode("utf-8")
         
         payload = {
@@ -105,7 +175,7 @@ class FontCatalogManager:
         response = requests.put(self.api_url, headers=self.headers, json=payload)
         
         if response.status_code in [200, 201]:
-            print("✅ Catalog updated successfully!")
+            print("☑️ Catalog updated successfully!")
             return True
         else:
             raise Exception(f"Failed to update file: {response.status_code} - {response.text}")
@@ -169,7 +239,7 @@ class FontCatalogManager:
             return None
     
     def analyze_font_with_colab_ai(self, name, source, url, category, specimen_img=None):
-        """Use Google Colab AI for visual analysis"""
+        """Use Colab AI for visual analysis"""
         try:
             prompt_base = """Analyze this font and describe its VISUAL aesthetic characteristics.
 
@@ -225,7 +295,7 @@ Category: {category}
             return suggested_tags[:5]
             
         except Exception as e:
-            print(f"　　　⚠️  Colab AI error: {e}")
+            print(f"　　　🤷‍♀️ Oops, Colab AI error: {e}")
             return []
     
     def analyze_font_with_gemini(self, name, source, url, category, specimen_img=None):
@@ -276,7 +346,7 @@ Category: {category}
             return suggested_tags[:5]
             
         except Exception as e:
-            print(f"　　　⚠️  Gemini API error: {e}")
+            print(f"　　　🤷‍♀️ Oops, Gemini API error: {e}")
             return []
     
     def analyze_font_visually(self, name, source, url, category):
@@ -289,11 +359,11 @@ Category: {category}
             specimen_img = None
             
             if source == "google":
-                print("　　　📸 Fetching Google Fonts specimen...")
+                print("　　　📡 Fetching Google Fonts specimen...")
                 specimen_img = self.get_google_font_specimen(name)
             
             if not specimen_img and url:
-                print("　　　📸 Generating font specimen from URL...")
+                print("　　　📡 Generating font specimen from URL...")
                 specimen_img = self.generate_font_specimen(name, source, url)
             
             # Analyze based on AI type
@@ -303,7 +373,7 @@ Category: {category}
                 return self.analyze_font_with_gemini(name, source, url, category, specimen_img)
             
         except Exception as e:
-            print(f"　　　⚠️  AI analysis error: {e}")
+            print(f"　　　🤷‍♀️ Oops, AI analysis error: {e}")
             return []
     
     def add_font_interactive(self):
@@ -313,7 +383,7 @@ Category: {category}
         print("═" * 67)
         
         # Get font details
-        name = input("\n　Ｆ Ｏ Ｎ Ｔ 　Ｎ Ａ Ｍ Ｅ ： ").strip()
+        name = input("\n　ＦＯＮＴ ＮＡＭＥ： ").strip()
         
         print("\n　━━━ ＳＯＵＲＣＥ ━━━")
         print("　　　（google • custom • other）")
@@ -326,16 +396,16 @@ Category: {category}
         print("　　　（sans-serif • serif • monospace • display • handwriting）")
         category = input("　　　＞ ").strip().lower()
         
-        # AI-powered VISUAL tag suggestion
+        # AI-powered tag suggestion
         print("\n　━━━ ＴＡＧＳ ━━━")
         suggested_tags = []
         
         if self.ai_type:
-            print("　　　🤖 Analyzing font VISUAL aesthetics with AI...")
+            print("　　　🌀 Analyzing font visual aesthetics...")
             suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　💡 AI Suggested: {', '.join(suggested_tags)}")
+                print(f"　　　🤖 AI suggested tags: {', '.join(suggested_tags)}")
                 print("\n　　　ＯＰＴＩＯＮＳ：")
                 print("　　　 • Press Enter to accept ALL")
                 print("　　　 • Type tag numbers to keep (e.g., 1,3,5)")
@@ -351,20 +421,20 @@ Category: {category}
                 if not tags_input:
                     # Accept all
                     tags = suggested_tags
-                    print(f"　　　✨ Using all AI suggestions: {', '.join(tags)}")
+                    print(f"　　　📜 Using all AI suggestions: {', '.join(tags)}")
                 elif tags_input.replace(',', '').replace(' ', '').isdigit():
                     # Tag numbers selected
                     try:
                         selected_indices = [int(x.strip()) for x in tags_input.split(',')]
                         tags = [suggested_tags[i-1] for i in selected_indices if 1 <= i <= len(suggested_tags)]
-                        print(f"　　　✨ Selected tags: {', '.join(tags)}")
+                        print(f"　　　📜 Selected tags: {', '.join(tags)}")
                     except (ValueError, IndexError):
                         print("　　　⚠️  Invalid selection, using all suggestions")
                         tags = suggested_tags
                 else:
                     # Custom tags entered
                     tags = [tag.strip().lower() for tag in tags_input.split(",") if tag.strip()]
-                    print(f"　　　✨ Using custom tags: {', '.join(tags)}")
+                    print(f"　　　📜 Using custom tags: {', '.join(tags)}")
             else:
                 print("　　　（Enter comma-separated tags）")
                 tags_input = input("　　　＞ ").strip()
@@ -383,11 +453,14 @@ Category: {category}
             "tags": tags
         }
         
-        # Preview
+        # Preview with compact formatting
         print("\n" + "═" * 67)
         print("　　　　　　　　░▒▓█  ＰＲＥＶＩＥＷ  █▓▒░")
         print("═" * 67)
-        print(json.dumps(new_font, indent=2))
+        preview_json = format_catalog_json([new_font])
+        # Remove outer array brackets for single item preview
+        preview_lines = preview_json.split('\n')[1:-1]
+        print('\n'.join(preview_lines))
         print("═" * 67)
         
         confirm = input("\n　ＣＯＮＦＩＲＭ？ (yes/no)： ").strip().lower()
@@ -402,9 +475,9 @@ Category: {category}
         """Main execution flow"""
         try:
             # Fetch current catalog
-            print("\n🔍 Fetching current catalog from GitHub...")
+            print("\n📡 Fetching current catalog from repository...")
             catalog, sha = self.get_current_catalog()
-            print(f"✅ Found {len(catalog)} existing fonts")
+            print(f"☑️ Found {len(catalog)} existing fonts")
             
             # Add new font interactively
             new_font = self.add_font_interactive()
@@ -422,12 +495,10 @@ Category: {category}
                 
                 # Add to catalog
                 catalog.append(new_font)
-                
-                # Update on GitHub
                 commit_msg = f"Add {new_font['name']} to font catalog"
-                print(f"\n📤 Uploading to GitHub...")
+                print(f"\n🌀 Committing to catalog...")
                 self.update_catalog(catalog, sha, commit_msg)
-                print(f"🎉 Successfully added '{new_font['name']}' to catalog!")
+                print(f"🎊 Successfully added '{new_font['name']}' to catalog!")
                 
         except Exception as e:
             print(f"❌ Error: {e}")
