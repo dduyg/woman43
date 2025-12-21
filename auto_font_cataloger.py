@@ -50,7 +50,6 @@ class CompactJSONEncoder(json.JSONEncoder):
         
     def encode(self, obj):
         if isinstance(obj, list):
-            # Keep lists compact on one line
             return '[' + ','.join(json.dumps(item) for item in obj) + ']'
         return super().encode(obj)
     
@@ -467,7 +466,7 @@ Category: {category}
         print('\n'.join(preview_lines))
         print("═" * 67)
         
-        confirm = input("\n　ＣＯＮＦＩＲＭ？ (yes/no)： ").strip().lower()
+        confirm = input("\n　🔘 ＣＯＮＦＩＲＭ？ (yes/no)： ").strip().lower()
         
         if confirm in ['yes', 'y']:
             return new_font
@@ -494,7 +493,7 @@ Category: {category}
                     # Check for duplicates
                     if any(font["name"] == new_font["name"] for font in catalog + new_fonts):
                         print(f"\n⚠  Font '{new_font['name']}' already exists!")
-                        overwrite = input("　ＯＶＥＲＷＲＩＴＥ？ (yes/no)： ").strip().lower()
+                        overwrite = input("　🔘 ＯＶＥＲＷＲＩＴＥ？ (yes/no)： ").strip().lower()
                         if overwrite in ['yes', 'y']:
                             # Remove from catalog if exists
                             catalog = [f for f in catalog if f["name"] != new_font["name"]]
@@ -530,7 +529,7 @@ Category: {category}
                     print(f"　　　Tags: {', '.join(font['tags'])}")
                 
                 print("\n" + "═" * 67)
-                final_confirm = input(f"\n　Commit　all　{len(new_fonts)} fonts？(yes/no)：").strip().lower()
+                final_confirm = input(f"\n　🔘 Commit　all　{len(new_fonts)} fonts？(yes/no)：").strip().lower()
                 
                 if final_confirm in ['yes', 'y']:
                     # Add all fonts to catalog
@@ -572,7 +571,7 @@ Category: {category}
                 # Check for duplicates
                 if any(font["name"] == new_font["name"] for font in catalog):
                     print(f"\n⚠  Font '{new_font['name']}' already exists!")
-                    overwrite = input("　ＯＶＥＲＷＲＩＴＥ？ (yes/no)： ").strip().lower()
+                    overwrite = input("　🔘 ＯＶＥＲＷＲＩＴＥ？ (yes/no)： ").strip().lower()
                     if overwrite in ['yes', 'y']:
                         catalog = [f for f in catalog if f["name"] != new_font["name"]]
                     else:
