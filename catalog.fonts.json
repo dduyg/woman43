@@ -75,5 +75,12 @@
     "url": "https://fonts.googleapis.com/css2?family=Audiowide&display=swap",
     "category": "sans-serif",
     "tags": ["futuristic","techno","modular"]
+  },
+  {
+    "name": "Quantico",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Quantico&display=swap",
+    "category": "sans-serif",
+    "tags": ["futuristic","brutalist","techno"]
   }
 ]
