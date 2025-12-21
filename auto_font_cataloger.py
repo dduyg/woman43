@@ -458,7 +458,6 @@ Category: {category}
             "tags": tags
         }
         
-        # Preview with compact formatting
         print("\n" + "═" * 67)
         print("░▒▓█  ＰＲＥＶＩＥＷ  █▓▒░")
         print("═" * 67)
@@ -513,7 +512,7 @@ Category: {category}
                 
                 # Ask if user wants to add more
                 print("\n" + "─" * 67)
-                add_more = input("　ＡＤＤ　ＡＮＯＴＨＥＲ　ＦＯＮＴ？ (yes/no)： ").strip().lower()
+                add_more = input("　➕ Add another font？(yes/no)：").strip().lower()
                 
                 if add_more not in ['yes', 'y']:
                     break
@@ -559,7 +558,7 @@ Category: {category}
             print(f"✗ Error: {e}")
     
     def run_single_mode(self):
-        """Single font addition mode (original behavior)"""
+        """Single font addition mode"""
         try:
             # Fetch current catalog
             print("\n📡 Fetching current catalog...")
@@ -641,7 +640,7 @@ def main():
     print("\n　1. Single font (add one font)")
     print("　2. Batch mode (add multiple fonts)")
     
-    mode_choice = input("\n　ＭＯＤＥ　(1/2)： ").strip()
+    mode_choice = input("\n🎚 ＭＯＤＥ　(1/2)： ").strip()
     
     if mode_choice == "2":
         manager.run_batch_mode()
