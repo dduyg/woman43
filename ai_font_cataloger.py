@@ -25,7 +25,7 @@ from PIL import Image, ImageDraw, ImageFont
 import tempfile
 import os
 
-# Check running environment
+# Check if running in Colab
 try:
     from google.colab import ai
     COLAB_AI_AVAILABLE = True
@@ -58,16 +58,16 @@ class FontCatalogManager:
         # Initialize AI based on environment
         if self.use_ai:
             if COLAB_AI_AVAILABLE:
-                print("✔️ Using Colab AI")
+                print("✅ Using Google Colab AI (free!)")
                 self.ai_type = "colab"
                 self.model = None
             elif GEMINI_AVAILABLE and gemini_api_key:
-                print("✔️ Using Gemini API")
+                print("✅ Using Gemini API")
                 genai.configure(api_key=gemini_api_key)
                 self.model = genai.GenerativeModel('gemini-1.5-flash')
                 self.ai_type = "gemini"
             else:
-                print("🗿  AI not available")
+                print("⚠️  AI not available")
                 self.ai_type = None
                 self.model = None
         else:
@@ -105,7 +105,7 @@ class FontCatalogManager:
         response = requests.put(self.api_url, headers=self.headers, json=payload)
         
         if response.status_code in [200, 201]:
-            print("☑️ Catalog updated successfully!")
+            print("✅ Catalog updated successfully!")
             return True
         else:
             raise Exception(f"Failed to update file: {response.status_code} - {response.text}")
@@ -225,7 +225,7 @@ Category: {category}
             return suggested_tags[:5]
             
         except Exception as e:
-            print(f"　　　🤷‍♀️ Oops, Colab AI error: {e}")
+            print(f"　　　⚠️  Colab AI error: {e}")
             return []
     
     def analyze_font_with_gemini(self, name, source, url, category, specimen_img=None):
@@ -289,11 +289,11 @@ Category: {category}
             specimen_img = None
             
             if source == "google":
-                print("　　　📡 Fetching Google Fonts specimen...")
+                print("　　　📸 Fetching Google Fonts specimen...")
                 specimen_img = self.get_google_font_specimen(name)
             
             if not specimen_img and url:
-                print("　　　📡 Generating font specimen from URL...")
+                print("　　　📸 Generating font specimen from URL...")
                 specimen_img = self.generate_font_specimen(name, source, url)
             
             # Analyze based on AI type
@@ -303,7 +303,7 @@ Category: {category}
                 return self.analyze_font_with_gemini(name, source, url, category, specimen_img)
             
         except Exception as e:
-            print(f"　　　🤷‍♀️ Oops,  AI analysis error: {e}")
+            print(f"　　　⚠️  AI analysis error: {e}")
             return []
     
     def add_font_interactive(self):
@@ -313,7 +313,7 @@ Category: {category}
         print("═" * 67)
         
         # Get font details
-        name = input("\n　ＦＯＮＴ ＮＡＭＥ： ").strip()
+        name = input("\n　Ｆ Ｏ Ｎ Ｔ 　Ｎ Ａ Ｍ Ｅ ： ").strip()
         
         print("\n　━━━ ＳＯＵＲＣＥ ━━━")
         print("　　　（google • custom • other）")
@@ -331,24 +331,47 @@ Category: {category}
         suggested_tags = []
         
         if self.ai_type:
-            print("　　　🌀 Analyzing font visual aesthetics with AI...")
+            print("　　　🤖 Analyzing font VISUAL aesthetics with AI...")
             suggested_tags = self.analyze_font_visually(name, source, url, category)
             
             if suggested_tags:
-                print(f"　　　📜 AI Suggested: {', '.join(suggested_tags)}")
-                print("　　　（Press Enter to accept, or type your own comma-separated tags）")
+                print(f"　　　💡 AI Suggested: {', '.join(suggested_tags)}")
+                print("\n　　　ＯＰＴＩＯＮＳ：")
+                print("　　　 • Press Enter to accept ALL")
+                print("　　　 • Type tag numbers to keep (e.g., 1,3,5)")
+                print("　　　 • Type your own tags (comma-separated)")
+                
+                # Display numbered tags
+                print("\n　　　ＳＵＧＧＥＳＴＥＤ　ＴＡＧＳ：")
+                for i, tag in enumerate(suggested_tags, 1):
+                    print(f"　　　　{i}. {tag}")
+                
+                tags_input = input("\n　　　＞ ").strip()
+                
+                if not tags_input:
+                    # Accept all
+                    tags = suggested_tags
+                    print(f"　　　✨ Using all AI suggestions: {', '.join(tags)}")
+                elif tags_input.replace(',', '').replace(' ', '').isdigit():
+                    # Tag numbers selected
+                    try:
+                        selected_indices = [int(x.strip()) for x in tags_input.split(',')]
+                        tags = [suggested_tags[i-1] for i in selected_indices if 1 <= i <= len(suggested_tags)]
+                        print(f"　　　✨ Selected tags: {', '.join(tags)}")
+                    except (ValueError, IndexError):
+                        print("　　　⚠️  Invalid selection, using all suggestions")
+                        tags = suggested_tags
+                else:
+                    # Custom tags entered
+                    tags = [tag.strip().lower() for tag in tags_input.split(",") if tag.strip()]
+                    print(f"　　　✨ Using custom tags: {', '.join(tags)}")
             else:
                 print("　　　（Enter comma-separated tags）")
+                tags_input = input("　　　＞ ").strip()
+                tags = [tag.strip().lower() for tag in tags_input.split(",") if tag.strip()]
         else:
             print("　　　（Enter comma-separated tags, e.g., geometric,neutral,modern）")
-        
-        tags_input = input("　　　＞ ").strip()
-        
-        # Use suggested if empty, otherwise parse input
-        if not tags_input and suggested_tags:
-            tags = suggested_tags
-            print(f"　　　✨ Using AI visual analysis: {', '.join(tags)}")
-        else:
+            tags_input = input("　　　＞ ").strip()
             tags = [tag.strip().lower() for tag in tags_input.split(",") if tag.strip()]
         
         # Create new font entry
@@ -379,9 +402,9 @@ Category: {category}
         """Main execution flow"""
         try:
             # Fetch current catalog
-            print("\n📡 Fetching current catalog from repository...")
+            print("\n🔍 Fetching current catalog from GitHub...")
             catalog, sha = self.get_current_catalog()
-            print(f"✔️ Found {len(catalog)} existing fonts")
+            print(f"✅ Found {len(catalog)} existing fonts")
             
             # Add new font interactively
             new_font = self.add_font_interactive()
@@ -402,9 +425,9 @@ Category: {category}
                 
                 # Update on GitHub
                 commit_msg = f"Add {new_font['name']} to font catalog"
-                print(f"\n🌀 Committing to repository...")
+                print(f"\n📤 Uploading to GitHub...")
                 self.update_catalog(catalog, sha, commit_msg)
-                print(f"🎊 Successfully added '{new_font['name']}' to catalog!")
+                print(f"🎉 Successfully added '{new_font['name']}' to catalog!")
                 
         except Exception as e:
             print(f"❌ Error: {e}")
