@@ -1,20 +1,3 @@
----
-
-<div align="center">
-
-A <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=30&pause=1000&color=BFB0BC&center=true&vCenter=true&repeat=true&width=800&lines=pattern-obsessed;ensemble-everything;hyperparameter-tortured;latent-space-wandering;architecturally+adventurous;efficiency-obsessed" alt=""> ML Engineer, building production ML pipelines & explainable AI systems
-</div>
-
-## 👋 Hey there!
-
-I'm Duygu, building ML systems that don't just work—they make sense.
-
-I believe the best ML systems are:
-- **Explainable** - If you can't explain it, you don't understand it
-- **Systematic** - Chaos organized is just architecture
-- **Beautiful** - Code is craft; aesthetics matter
-
-
 ```
 I want to put on my readme.md github profile, is it possible to do:
 
@@ -30,15 +13,6 @@ A [efficiency-obsessed] ML Engineer...
 ```
 
 
----
-
-<div align="center">
-  
-*Currently exploring: Advanced model interpretability • Generative data visualization • The liminal space between art and algorithms*
-
-</div>
-
-
 ```
 <g transform="translate(40, 40)">
     <text class="adjective">pattern-obsessed</text>
@@ -48,18 +22,29 @@ A [efficiency-obsessed] ML Engineer...
     <text class="adjective">architecturally adventurous</text>
   </g>
 ```
+ 
+<img width="250" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/bins-and-balls.gif">
 
 ---
 
-<div align="center">
+<br>
 
-  **Hi there 👋🏼 I'm Duygu.**
- 
-<img width="250" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/bins-and-balls.gif">
+
+
 <table>
   <tr>
     <td align="center" width="50"><a href="https://dduyg.github.io/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/internetarchive/C3BABA"></a></td>
-    <td rowspan="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci arcu. In enim justo rhoncus ut imperdiet a venenatis vitae justo. Add as much text as you want here and the icons will still show on the left.</td>
+    <td rowspan="5"><p>Hi there 👋🏼 I’m Duygu—an efficiency-obsessed ML Engineer and Logic Synthesiser. I design scalable pipelines and explainable AI systems that don’t just work, but make sense.</p><p>I believe the best systems are explainable (if you can’t explain it, you don’t understand it), systematic (architecture is chaos, thoughtfully organized), and beautiful (code is craft, and aesthetics matter).</p>
+
+<p align="center">
+  <img width="80" src="https://media1.giphy.com/media/DHJvUyOySrf8c/giphy.gif">
+</p>
+
+<div align="center">
+  
+*Currently exploring: Advanced model interpretability • Generative databases • Cloud Tech 🐍 ☁️*
+
+</div></td>
   </tr>
   <tr>
     <td align="center" width="50"><a href="https://observablehq.com/user/@dduyg" target="_blank"><img width="28" src="https://cdn.simpleicons.org/observable/C3BABA"/></a></td>
