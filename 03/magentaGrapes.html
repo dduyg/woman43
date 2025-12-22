@@ -38,8 +38,7 @@
     }
     .logo-text {order: 1;}
     .circle {
-      width: 12px;
-      height: 12px;
+      width: 12px; height: 12px;
       background-color: white;
       border-radius: 50%;
       margin-left: 8px;
@@ -70,11 +69,9 @@
     nav ul li a::after {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 2px;
+      width: 100%; height: 2px;
       background-color: white;
-      left: 0;
-      top: 50%;
+      left: 0; top: 50%;
       transform: scaleX(0);
       transition: transform 0.3s ease;
       transform-origin: right;
@@ -106,16 +103,14 @@
     }
     .scroller {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       will-change: transform;
     }
 
     .section {
       position: relative;
-      width: 100%;
-      height: 100vh;
+      width: 100%; height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -126,10 +121,8 @@
     .section::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-color: rgba(0, 0, 0, 0.3);
       z-index: 1;
     }
@@ -139,10 +132,8 @@
     .section-4 { background-color: #969e94; z-index: 40; }
     .video-background {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       -o-object-fit: cover;
       object-fit: cover; 
       z-index: 0;
@@ -192,8 +183,7 @@
 
     .bottom-progress {
       position: fixed;
-      bottom: 3rem;
-      left: 50%;
+      bottom: 3rem; left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
@@ -204,14 +194,12 @@
       font-size: 0.8rem;
     }
     .bottom-progress-bar {
-      width: 100px;
-      height: 2px;
+      width: 100px; height: 2px;
       background-color: rgba(255, 255, 255, 0.3);
       overflow: hidden;
     }
     .bottom-progress-fill {
-      height: 100%;
-      width: 100%;
+      height: 100%; width: 100%;
       background-color: white;
       transform-origin: left;
       transform: scaleX(0);
@@ -247,7 +235,7 @@
     <!-- First set (buffer before) -->
     <section class="section section-1">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -262,7 +250,7 @@
 
     <section class="section section-2">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_02.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_02.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -277,7 +265,7 @@
 
     <section class="section section-3">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_03.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_03.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -292,7 +280,7 @@
 
     <section class="section section-4">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_04.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_04.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -308,7 +296,7 @@
     <!-- Second set (main sequence) -->
     <section class="section section-1">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -323,7 +311,7 @@
 
     <section class="section section-2">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_02.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_02.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -338,7 +326,7 @@
 
     <section class="section section-3">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_03.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_03.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -353,7 +341,7 @@
 
     <section class="section section-4">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_04.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_04.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -369,7 +357,7 @@
     <!-- Third set (buffer after) -->
     <section class="section section-1">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -384,7 +372,7 @@
 
     <section class="section section-2">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_02.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_02.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -399,7 +387,7 @@
 
     <section class="section section-3">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_03.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_03.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
@@ -414,7 +402,7 @@
 
     <section class="section section-4">
       <video class="video-background" autoplay loop muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/Bryce3D_04.mp4" type="video/mp4">
+        <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/Bryce3D_04.mp4" type="video/mp4">
       </video>
       <div class="section-content">
         <div class="left-content">
