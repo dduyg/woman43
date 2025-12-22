@@ -1,8 +1,7 @@
 >  Trademark (™) — &trade;
 
-[<kbd><img width="25" src="https://img.icons8.com/?size=100&id=iKvs9s3u1mZS&format=png&color=7A0045"/><img width="30" src="https://img.icons8.com/?size=100&id=dGiodiqcwDyd&format=png&color=C05746"/>🏗️</kbd>](https://www.fontshare.com/) ✦✦ [<kbd> <br> cropCircle <br> </kbd>](https://crop-circle.imageonline.co/) 
 
-<br><br>
+<br>
 
 
 ```markdown
