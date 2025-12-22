@@ -62,9 +62,9 @@ A [efficiency-obsessed] ML Engineer...
 
 ┌──┤ ABOUT ├─────────▰▰▰
 │
-├─▣ Data Scientist & Engineer
 ├─▣ Building production ML pipelines & explainable AI systems
-├─▣ Exploring the intersection of data science & creativity
+├─▣ Synthesizing logic into ML systems, where every model tells a clear story and every pipeline is built to last
+├─▣ Synthesiser who builds models that are interpretable by design
 │
 └───────────────────────────────▰▰▰
 
