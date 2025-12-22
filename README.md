@@ -12,29 +12,16 @@
 ---
 
 
-| <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | <details><summary>LATEST ⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
+| <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | |
 |---|---|
-| <a href= "#" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | 🌀 |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | 🌀 |
-| <a href= "https://colorkit.co/html-color-names/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/sagemath/C3BABA"/></a> | HTML colornames |
-| <a href= "https://www.icoconverter.com/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | icoconverter |
-| <a href= "https://uigradients.com/#Memariani" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | uigradients |
-| <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | auto re-indent online code beautifier |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | 🔘 |
+| <a href= "#" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | <blockquote>🌀</blockquote> |
+| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | <blockquote>🌀</blockquote> |
+| <a href= "https://colorkit.co/html-color-names/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/sagemath/C3BABA"/></a> | <blockquote>HTML colornames</blockquote> |
+| <a href= "https://www.icoconverter.com/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | <blockquote>icoconverter</blockquote> |
+| <a href= "https://uigradients.com/#Memariani" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | <blockquote>uigradients</blockquote> |
+| <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | <blockquote>auto re-indent online code beautifier</blockquote> |
+| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | <details><summary>LATEST ⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
 
----
-
-
-
-<br>
-
-
-```html
-<i class="fas fa-circle"></i>
-<i class="fas fa-square"></i>
-<i class="fas fa-database"></i>
-<a href="../14/">➾</a>
-```
 
 <br>
 
