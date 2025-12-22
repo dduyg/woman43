@@ -22,13 +22,10 @@ A [efficiency-obsessed] ML Engineer...
     <text class="adjective">architecturally adventurous</text>
   </g>
 ```
- 
-<img width="250" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/bins-and-balls.gif">
 
 ---
 
 <br><br><br>
-
 
 
 <table>
@@ -39,14 +36,12 @@ A [efficiency-obsessed] ML Engineer...
 <div align="center">
   <img width="70" src="https://media1.giphy.com/media/DHJvUyOySrf8c/giphy.gif">
     <details><summary>&nbsp; <samp>Currently</samp></summary><br>
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)
   
 *Currently exploring: Advanced model interpretability • Generative databases • Cloud Tech 🐍 ☁️*
 
-<br>
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)
-
-</details>
+<img width="120" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/bins-and-balls.gif"></details>
 </div></td>
   </tr>
   <tr>
