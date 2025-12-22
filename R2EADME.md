@@ -1,16 +1,3 @@
->  Trademark (™) — &trade;
-
-
-<br>
-
-
-```markdown
-⭓⭔,  ⬡⬢,  ⬮⬯
-
-⛡ ▆  ⚞ ⏥   ♖ ▣
-```
-<br>
-
 <details><summary>hhuote</summary>
 <br>
 
@@ -24,6 +11,9 @@
 <i class="fas fa-database"></i>
 <a href="../14/">➾</a>
 ```
+
+>  Trademark (™) — &trade;
+
 
 <br><br>
 
