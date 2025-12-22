@@ -7,12 +7,12 @@
 
 | <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | |
 |---|---|
-| <a href= "#" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | <blockquote>🌀</blockquote> |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | <blockquote>🌀</blockquote> |
+| <a href= "https://picsvg.com/" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | <blockquote>img2svg</blockquote> |
+| <a href= "https://www.w3schools.com/howto/howto_css_shapes.asp" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | <blockquote>CSS Shapes</blockquote> |
 | <a href= "https://colorkit.co/html-color-names/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/sagemath/C3BABA"/></a> | <blockquote>HTML colornames</blockquote> |
 | <a href= "https://www.icoconverter.com/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | <blockquote>icoconverter</blockquote> |
 | <a href= "https://uigradients.com/#Memariani" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | <blockquote>uigradients</blockquote> |
-| <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | <blockquote>auto re-indent online code beautifier</blockquote> |
+| <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | <blockquote>auto re-indent online code beautifier [<kbd> <img width="23" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=D9D0D7"/> </kbd>](https://beautifier.io/)</blockquote> |
 | <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | <details><summary>LATEST ⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
 
 </div>
