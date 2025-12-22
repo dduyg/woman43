@@ -27,7 +27,7 @@ A [efficiency-obsessed] ML Engineer...
 
 ---
 
-<br>
+<br><br><br>
 
 
 
@@ -60,9 +60,52 @@ A [efficiency-obsessed] ML Engineer...
   </tr>
 </table>
 
-<samp>I love creating new things with data and code.</samp><details><summary>&nbsp; <samp>Latest ↓</samp></summary>
+<details><summary>&nbsp; <samp>Currently</samp></summary>
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)
+
+</details>
+</div>
+
+
+---
+
+<pre>
+
+┌──┤ ABOUT ├─────────▰▰▰
+│
+├─▣ Data Scientist & Engineer
+├─▣ Building production ML pipelines & explainable AI systems
+├─▣ Exploring the intersection of data science & creativity
+│
+└───────────────────────────────▰▰▰
+
+┌──┤ PROJECTS ├───────▰▰▰
+│
+├─◈ <a href="#">AutoML Toolkit</a>
+├─◈ <a href="#">PyTorch Training Pipeline</a>
+├─◈ <a href="#">SHAP Implementation Patterns</a>
+├─◈ <a href="#">Neural Architecture Search</a>
+├─◈ <a href="#">Feature Engineering Library</a>
+│
+└───────────────────────────────▰▰▰
+
+</pre>
+
+
+----
+
+
+> [!WARNING]
+> To show private statistics on the stats card, you should deploy using GitHub API token.
+
+> [!NOTE]
+> Made by Duygu who appreciate smooth animations
+
+> [!IMPORTANT]
+> system.log: { status: "abandoned server" }
+
+---
 
 ```mermaid
 mindmap
@@ -117,44 +160,3 @@ mindmap
         Load Balancer
       Terraform
 ```
-
-</details>
-</div>
-
-
----
-
-<pre>
-
-┌──┤ ABOUT ├─────────▰▰▰
-│
-├─▣ Data Scientist & Engineer
-├─▣ Building production ML pipelines & explainable AI systems
-├─▣ Exploring the intersection of data science & creativity
-│
-└───────────────────────────────▰▰▰
-
-┌──┤ PROJECTS ├───────▰▰▰
-│
-├─◈ <a href="#">AutoML Toolkit</a>
-├─◈ <a href="#">PyTorch Training Pipeline</a>
-├─◈ <a href="#">SHAP Implementation Patterns</a>
-├─◈ <a href="#">Neural Architecture Search</a>
-├─◈ <a href="#">Feature Engineering Library</a>
-│
-└───────────────────────────────▰▰▰
-
-</pre>
-
-
-----
-
-
-> [!WARNING]
-> To show private statistics on the stats card, you should deploy using GitHub API token.
-
-> [!NOTE]
-> Made by Duygu who appreciate smooth animations
-
-> [!IMPORTANT]
-> system.log: { status: "abandoned server" }
