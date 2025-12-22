@@ -1,10 +1,6 @@
 >  Trademark (™) — &trade;
 
-[<kbd><img width="25" src="https://img.icons8.com/?size=100&id=iKvs9s3u1mZS&format=png&color=7A0045"/><img width="30" src="https://img.icons8.com/?size=100&id=dGiodiqcwDyd&format=png&color=C05746"/>🏗️</kbd>](https://www.fontshare.com/) ✦ [<kbd> <br> img2svg <br> </kbd>](https://picsvg.com/)
-
-[<kbd> <br> CSS Shapes <br> </kbd>](https://www.w3schools.com/howto/howto_css_shapes.asp) ✦✦
-
-✦ [<kbd> <br> cropCircle <br> </kbd>](https://crop-circle.imageonline.co/) <img width="25" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=7A0045"/>
+[<kbd><img width="25" src="https://img.icons8.com/?size=100&id=iKvs9s3u1mZS&format=png&color=7A0045"/><img width="30" src="https://img.icons8.com/?size=100&id=dGiodiqcwDyd&format=png&color=C05746"/>🏗️</kbd>](https://www.fontshare.com/) ✦✦ [<kbd> <br> cropCircle <br> </kbd>](https://crop-circle.imageonline.co/) 
 
 <br><br>
 
