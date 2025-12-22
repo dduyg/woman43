@@ -21,6 +21,15 @@
 
 > ← `view-source`: a browser command that displays the raw code structure—including HTML, CSS, and JavaScript—behind a webpage can be accessed by typing ___view-source:___ in front of a URL in your browser’s address bar.
 
+<br>
+
+```html
+<i class="fas fa-circle"></i>
+<i class="fas fa-square"></i>
+<i class="fas fa-database"></i>
+<a href="../14/">➾</a>
+```
+
 <br><br>
 
 ## <samp>Try this next</samp> 🪸
