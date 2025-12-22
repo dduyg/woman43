@@ -1,1 +1,549 @@
-
+{
+  "total": 16,
+  "glyphs": [
+    {
+      "id": "97e7cf00",
+      "filename": "eedde8_20251220_143925_97e7cf00.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/eedde8_20251220_143925_97e7cf00.png",
+      "color": {
+        "hex": "eedde8",
+        "group": "gray",
+        "rgb": [
+          238,
+          221,
+          232
+        ],
+        "lab": [
+          89.73,
+          7.71,
+          -3.28
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0202,
+        "entropy": 13.9533,
+        "texture": 2.5136,
+        "contrast": 1.0,
+        "circularity": 0.1084,
+        "aspect_ratio": 1.1935,
+        "edge_angle": 60.0685
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:25"
+      }
+    },
+    {
+      "id": "53850e9c",
+      "filename": "79f78e_20251220_143926_53850e9c.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/79f78e_20251220_143926_53850e9c.png",
+      "color": {
+        "hex": "79f78e",
+        "group": "green",
+        "rgb": [
+          121,
+          247,
+          142
+        ],
+        "lab": [
+          88.23,
+          -56.61,
+          39.93
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0176,
+        "entropy": 14.9448,
+        "texture": 2.8036,
+        "contrast": 1.0,
+        "circularity": 0.6515,
+        "aspect_ratio": 0.6705,
+        "edge_angle": 10.6631
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:26"
+      }
+    },
+    {
+      "id": "98a52646",
+      "filename": "946472_20251220_143927_98a52646.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/946472_20251220_143927_98a52646.png",
+      "color": {
+        "hex": "946472",
+        "group": "pink",
+        "rgb": [
+          148,
+          100,
+          114
+        ],
+        "lab": [
+          47.78,
+          21.5,
+          0.04
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0028,
+        "entropy": 12.3685,
+        "texture": 2.449,
+        "contrast": 1.0,
+        "circularity": 0.8743,
+        "aspect_ratio": 0.8062,
+        "edge_angle": 3.5763
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:27"
+      }
+    },
+    {
+      "id": "34926676",
+      "filename": "504b43_20251220_143927_34926676.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/504b43_20251220_143927_34926676.png",
+      "color": {
+        "hex": "504b43",
+        "group": "orange",
+        "rgb": [
+          80,
+          75,
+          67
+        ],
+        "lab": [
+          32.13,
+          0.49,
+          5.51
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0133,
+        "entropy": 15.2592,
+        "texture": 2.6309,
+        "contrast": 0.7495,
+        "circularity": 0.5904,
+        "aspect_ratio": 1.2267,
+        "edge_angle": 5.7928
+      },
+      "color_harmony": "complementary",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:27"
+      }
+    },
+    {
+      "id": "f893a12b",
+      "filename": "cabeb3_20251220_143927_f893a12b.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/cabeb3_20251220_143927_f893a12b.png",
+      "color": {
+        "hex": "cabeb3",
+        "group": "gray",
+        "rgb": [
+          202,
+          190,
+          179
+        ],
+        "lab": [
+          77.66,
+          2.34,
+          7.06
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.001,
+        "entropy": 13.3116,
+        "texture": 2.5985,
+        "contrast": 0.3583,
+        "circularity": 0.7866,
+        "aspect_ratio": 0.9559,
+        "edge_angle": 0.0
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:27"
+      }
+    },
+    {
+      "id": "a62c3339",
+      "filename": "cdbada_20251220_143927_a62c3339.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/cdbada_20251220_143927_a62c3339.png",
+      "color": {
+        "hex": "cdbada",
+        "group": "silver",
+        "rgb": [
+          205,
+          186,
+          218
+        ],
+        "lab": [
+          77.97,
+          12.6,
+          -13.57
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0019,
+        "entropy": 16.7463,
+        "texture": 2.7652,
+        "contrast": 0.8145,
+        "circularity": 0.7524,
+        "aspect_ratio": 1.0549,
+        "edge_angle": 5.5275
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:27"
+      }
+    },
+    {
+      "id": "71ba6639",
+      "filename": "d8dde1_20251220_143928_71ba6639.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/d8dde1_20251220_143928_71ba6639.png",
+      "color": {
+        "hex": "d8dde1",
+        "group": "gray",
+        "rgb": [
+          216,
+          221,
+          225
+        ],
+        "lab": [
+          87.85,
+          -0.94,
+          -2.55
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.006,
+        "entropy": 12.1747,
+        "texture": 2.9087,
+        "contrast": 0.5915,
+        "circularity": 0.8267,
+        "aspect_ratio": 0.9769,
+        "edge_angle": 2.8913
+      },
+      "color_harmony": "analogous",
+      "mood": "serene",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:28"
+      }
+    },
+    {
+      "id": "06d999a1",
+      "filename": "121117_20251220_143928_06d999a1.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/121117_20251220_143928_06d999a1.png",
+      "color": {
+        "hex": "121117",
+        "group": "black",
+        "rgb": [
+          18,
+          17,
+          23
+        ],
+        "lab": [
+          5.34,
+          1.74,
+          -3.56
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.102,
+        "entropy": 17.2086,
+        "texture": 2.5208,
+        "contrast": 1.0,
+        "circularity": 0.7897,
+        "aspect_ratio": 1.012,
+        "edge_angle": 8.2356
+      },
+      "color_harmony": "analogous",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:28"
+      }
+    },
+    {
+      "id": "ef270c73",
+      "filename": "bbb6c8_20251220_143929_ef270c73.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/bbb6c8_20251220_143929_ef270c73.png",
+      "color": {
+        "hex": "bbb6c8",
+        "group": "gray",
+        "rgb": [
+          187,
+          182,
+          200
+        ],
+        "lab": [
+          74.95,
+          5.19,
+          -8.46
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.1663,
+        "entropy": 16.3538,
+        "texture": 2.3439,
+        "contrast": 1.0,
+        "circularity": 0.0971,
+        "aspect_ratio": 0.9231,
+        "edge_angle": 3.4946
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:29"
+      }
+    },
+    {
+      "id": "12f716dd",
+      "filename": "3a0c96_20251220_143930_12f716dd.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/3a0c96_20251220_143930_12f716dd.png",
+      "color": {
+        "hex": "3a0c96",
+        "group": "black",
+        "rgb": [
+          58,
+          12,
+          150
+        ],
+        "lab": [
+          21.45,
+          51.91,
+          -64.28
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0193,
+        "entropy": 16.711,
+        "texture": 2.5261,
+        "contrast": 0.988,
+        "circularity": 0.484,
+        "aspect_ratio": 2.4182,
+        "edge_angle": 9.6052
+      },
+      "color_harmony": "analogous",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:30"
+      }
+    },
+    {
+      "id": "93eda979",
+      "filename": "3e81b3_20251220_143930_93eda979.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/3e81b3_20251220_143930_93eda979.png",
+      "color": {
+        "hex": "3e81b3",
+        "group": "blue",
+        "rgb": [
+          62,
+          129,
+          179
+        ],
+        "lab": [
+          51.81,
+          -5.31,
+          -32.67
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0307,
+        "entropy": 16.8728,
+        "texture": 2.6399,
+        "contrast": 1.0,
+        "circularity": 0.7782,
+        "aspect_ratio": 1.0428,
+        "edge_angle": 5.1944
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:30"
+      }
+    },
+    {
+      "id": "f22df44c",
+      "filename": "696f76_20251220_143932_f22df44c.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/696f76_20251220_143932_f22df44c.png",
+      "color": {
+        "hex": "696f76",
+        "group": "gray",
+        "rgb": [
+          105,
+          111,
+          118
+        ],
+        "lab": [
+          46.55,
+          -0.75,
+          -4.67
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0659,
+        "entropy": 14.1259,
+        "texture": 1.9488,
+        "contrast": 1.0,
+        "circularity": 0.1519,
+        "aspect_ratio": 0.9245,
+        "edge_angle": 12.5635
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:32"
+      }
+    },
+    {
+      "id": "f1902ed6",
+      "filename": "6f706c_20251220_143932_f1902ed6.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/6f706c_20251220_143932_f1902ed6.png",
+      "color": {
+        "hex": "6f706c",
+        "group": "gray",
+        "rgb": [
+          111,
+          112,
+          108
+        ],
+        "lab": [
+          47.04,
+          -1.19,
+          2.08
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0808,
+        "entropy": 13.0529,
+        "texture": 2.2835,
+        "contrast": 1.0,
+        "circularity": 0.2822,
+        "aspect_ratio": 1.0295,
+        "edge_angle": 7.6961
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:32"
+      }
+    },
+    {
+      "id": "2ed5bab1",
+      "filename": "9c98a3_20251220_143933_2ed5bab1.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/9c98a3_20251220_143933_2ed5bab1.png",
+      "color": {
+        "hex": "9c98a3",
+        "group": "gray",
+        "rgb": [
+          156,
+          152,
+          163
+        ],
+        "lab": [
+          63.48,
+          3.6,
+          -5.24
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0407,
+        "entropy": 14.5247,
+        "texture": 2.7387,
+        "contrast": 0.6677,
+        "circularity": 0.2005,
+        "aspect_ratio": 0.9546,
+        "edge_angle": 7.8533
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:33"
+      }
+    },
+    {
+      "id": "0e81c602",
+      "filename": "868686_20251220_143933_0e81c602.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/868686_20251220_143933_0e81c602.png",
+      "color": {
+        "hex": "868686",
+        "group": "gray",
+        "rgb": [
+          134,
+          134,
+          134
+        ],
+        "lab": [
+          55.93,
+          0.0,
+          -0.01
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.054,
+        "entropy": 7.3181,
+        "texture": 2.3894,
+        "contrast": 0.7347,
+        "circularity": 0.1367,
+        "aspect_ratio": 0.5624,
+        "edge_angle": 1.0649
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:33"
+      }
+    },
+    {
+      "id": "dc80d48a",
+      "filename": "232829_20251220_143933_dc80d48a.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/tomagotchi@main/glyphs/232829_20251220_143933_dc80d48a.png",
+      "color": {
+        "hex": "232829",
+        "group": "black",
+        "rgb": [
+          35,
+          40,
+          41
+        ],
+        "lab": [
+          15.67,
+          -1.96,
+          -1.42
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0383,
+        "entropy": 14.1918,
+        "texture": 2.4114,
+        "contrast": 1.0,
+        "circularity": 0.7864,
+        "aspect_ratio": 0.9905,
+        "edge_angle": 2.7927
+      },
+      "color_harmony": "analogous",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-12-20",
+        "time": "14:39:33"
+      }
+    }
+  ]
+}
