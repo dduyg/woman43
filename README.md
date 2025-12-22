@@ -1,16 +1,11 @@
-## `A Loop of Things⌬`
-
 <div align="center">
+
+## `A Loop of Things⌬`
 
 | <a href="https://dduyg.github.io/LiminalLoop" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homeassistantcommunitystore/C3BABA"/></a> | <a href="https://dduyg.github.io/LiminalLoop/03" target="_blank"><img width="28" src="https://cdn.simpleicons.org/polywork/C3BABA"></a> | <a href="https://dduyg.github.io/LiminalLoop/04" target="_blank"><img width="28" src="https://cdn.simpleicons.org/linear/C3BABA"></a> | <a href="https://dduyg.github.io/LiminalLoop/05" target="_blank"><img width="32" src="https://cdn.simpleicons.org/htmx/b3abb1"/></a> | <a href="https://dduyg.github.io/LiminalLoop/07" target="_blank"><img width="28" src="https://cdn.simpleicons.org/spring_creators/C3BABA"/></a> | <a href="https://dduyg.github.io/LiminalLoop/08" target="_blank"><img width="28" src="https://cdn.simpleicons.org/xyflow/C4B0B2"/></a> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 
-</div>
-
 <br>
-
----
-
 
 | <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | |
 |---|---|
@@ -22,8 +17,10 @@
 | <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | <blockquote>auto re-indent online code beautifier</blockquote> |
 | <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | <details><summary>LATEST ⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
 
+</div>
 
-<br>
+
+<br><br>
 
 ---
 
