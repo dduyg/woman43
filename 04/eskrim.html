@@ -8,8 +8,7 @@
   <style>  
     * { box-sizing: border-box; }  
     html, body {  
-      margin: 0;  
-      padding: 0;  
+      margin: 0; padding: 0;  
       height: 100%;  
       font-family: "Asta Sans", sans-serif;  
       font-size: 0.9rem;  
@@ -91,7 +90,7 @@
     <!-- 🦹🏼‍♂️Center [《》] -->  
     <div class="tape">  
       <video id="myVideo" width="100%" height="auto" autoplay loop playsinline style="border: 1px double;">   
-        <source id="videoSource" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/06/tell-Me.mp4" type="video/mp4" />  
+        <source id="videoSource" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/0-6/stream/tell-Me.mp4" type="video/mp4" />  
         Your browser does not support the video tag.  
       </video>  
     </div>  
@@ -113,8 +112,8 @@
     const source = document.getElementById('videoSource');
 
     function updateVideoSource() {
-      const smallScreenSrc = 'https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/tell-Me_small.mp4';
-      const largeScreenSrc = 'https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/tell-Me.mp4';
+      const smallScreenSrc = 'https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/tell-Me_small.mp4';
+      const largeScreenSrc = 'https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/tell-Me.mp4';
       
       const newSrc = window.innerWidth <= 768 ? smallScreenSrc : largeScreenSrc;
 
