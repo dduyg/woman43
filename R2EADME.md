@@ -11,7 +11,7 @@
 ```
 <br>
 
-<details><summary><br><blockquote>internet__moods</blockquote></summary>
+<details><summary>hhuote</summary>
 <br>
 
 > ← `view-source`: a browser command that displays the raw code structure—including HTML, CSS, and JavaScript—behind a webpage can be accessed by typing ___view-source:___ in front of a URL in your browser’s address bar.
