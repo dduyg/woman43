@@ -54,12 +54,26 @@ A [efficiency-obsessed] ML Engineer...
 <div align="center">
 
   **Hi there 👋🏼 I'm Duygu.**
-
-<div align="center">
-  <a href= "https://dduyg.github.io/" target="_blank"><img width="28" src="https://img.icons8.com/?size=100&id=53450&format=png&color=000000"/></a>&nbsp; <a href= "https://observablehq.com/user/@dduyg" target="_blank"><img width="25" src="https://logo.svgcdn.com/l/observablehq.png"></a>&nbsp; <a href= "https://instagram.com/insert.data" target="_blank"><img width="25" src="https://logo.svgcdn.com/l/instagram-icon.png"/></a>&nbsp; <a href= "https://medium.com/@dduyg" target="_blank"><img width="28" src="https://img.icons8.com/?size=100&id=XVNvUWCvvlD9&format=png&color=000000"/></a>&nbsp; <a href= "https://ko-fi.com/dduyg" target="_blank"><img width="29" src="https://logo.svgcdn.com/s/kofi-dark.png"/></a>
-</div> 
  
 <img width="250" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/bins-and-balls.gif">
+<table>
+  <tr>
+    <td align="center" width="50"><a href="https://dduyg.github.io/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/internetarchive/C3BABA"></a></td>
+    <td rowspan="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci arcu. In enim justo rhoncus ut imperdiet a venenatis vitae justo. Add as much text as you want here and the icons will still show on the left.</td>
+  </tr>
+  <tr>
+    <td align="center" width="50"><a href="https://observablehq.com/user/@dduyg" target="_blank"><img width="28" src="https://cdn.simpleicons.org/observable/C3BABA"/></a></td>
+  </tr>
+  <tr>
+    <td align="center" width="50"><a href="https://instagram.com/insert.data" target="_blank"><img width="28" src="https://cdn.simpleicons.org/instagram/C3BABA"/></a></td>
+  </tr>
+  <tr>
+    <td align="center" width="50"><a href="https://medium.com/@dduyg" target="_blank"><img width="28" src="https://img.icons8.com/?size=100&id=XVNvUWCvvlD9&format=png&color=C3BABA"/></a></td>
+  </tr>
+  <tr>
+    <td align="center" width="50"><a href="https://ko-fi.com/dduyg" target="_blank"><img width="28" src="https://cdn.simpleicons.org/kofi/C3BABA"/></a></td>
+  </tr>
+</table>
 
 <samp>I love creating new things with data and code.</samp><details><summary>&nbsp; <samp>Latest ↓</samp></summary>
 
@@ -146,33 +160,6 @@ mindmap
 └───────────────────────────────▰▰▰
 
 </pre>
-
-
-
----
-
-<table>
-  <tr>
-    <td align="center" width="50"><a href="#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/internetarchive/C3BABA"></a></td>
-    <td rowspan="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci arcu. In enim justo rhoncus ut imperdiet a venenatis vitae justo. Add as much text as you want here and the icons will still show on the left.</td>
-  </tr>
-  <tr>
-    <td align="center" width="50"><a href="#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/observable/C3BABA"/></a></td>
-  </tr>
-  <tr>
-    <td align="center" width="50"><a href="#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/instagram/C3BABA"/></a></td>
-  </tr>
-  <tr>
-    <td align="center" width="50"><a href="#" target="_blank"><img width="28" src="https://img.icons8.com/?size=100&id=XVNvUWCvvlD9&format=png&color=C3BABA"/></a></td>
-  </tr>
-  <tr>
-    <td align="center" width="50"><a href="#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/kofi/C3BABA"/></a></td>
-  </tr>
-</table>
-
-
-
-
 
 
 ----
