@@ -50,6 +50,8 @@
       align-items: center;
       height: 2rem;
       z-index: 10;
+      color: inherit;
+      text-decoration: none;
     }
     #badge .circles {
       position: relative;
@@ -107,14 +109,14 @@
     @media (max-width: 768px) {
       .nav-links { gap: 0.4rem; }
     }
-    a {
+    .nav-links a {
       color: inherit;
       text-decoration: none;
       transition: all 0.3s ease;
       position: relative;
       padding-left: 0;
     }
-    a::before {  
+    .nav-links a::before {  
       content: "";
       position: absolute; 
       left: 0; top: 50%;
@@ -124,8 +126,8 @@
       transition: width 0.3s ease, opacity 0.3s ease;
       opacity: 0;
     }   
-    a:hover { color: rgb(205, 205, 0); padding-left: 1.2rem; }
-    a:hover::before {  width: 0.8rem; opacity: 1; }    
+    .nav-links a:hover { color: rgb(205, 205, 0); padding-left: 1.2rem; }
+    .nav-links a:hover::before {  width: 0.8rem; opacity: 1; }    
     .footer { margin-top: 1rem; font-size: 0.65rem; }
     .footer p { opacity: 0.5; }
 
@@ -140,7 +142,7 @@
   </style>
 </head>
 <body>
-<div id="badge"><div class="circles"><div class="circle circle-1"></div><div class="circle circle-2"></div></div></div>
+<a href="../0-4/" id="badge"><div class="circles"><div class="circle circle-1"></div><div class="circle circle-2"></div></div></a>
   
 <main class="container">
    <div class="sidebar">
@@ -176,7 +178,7 @@
    </div>
    <div class="main-content">
      <p class="signal">
-       <a href="../0-4/">ACCESS LEVEL: RESTRICTED.</a><br>
+       ACCESS LEVEL: RESTRICTED.<br>
        TRACE INITIATED: SOURCE UNKNOWN.</p>
    </div>
 </main>
