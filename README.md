@@ -863,7 +863,7 @@ fetchGoogleDriveFile();
 </details>
 
 <details>
-<summary>&nbsp; `💾 𝘿𝘼𝙏𝘼 ⭒ 𝘾𝙊𝘿𝙀𝙍`</summary>
+<summary>&nbsp; <code>💾 𝘿𝘼𝙏𝘼 ⭒ 𝘾𝙊𝘿𝙀𝙍</code></summary>
 <br>
 
 ```
