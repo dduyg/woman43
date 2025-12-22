@@ -1,20 +1,12 @@
 # <samp>LiminalLoop ⛃⛂</samp>
 
-| <a href="https://dduyg.github.io/LiminalLoop/" target="_blank"><img width="21" height="21" src="https://img.icons8.com/?size=100&id=1713&format=png&color=C3BABA"/></a> | <a href="https://dduyg.github.io/LiminalLoop/05/" target="_blank"><img width="30" height="30" src="https://img.icons8.com/?size=100&id=35322&format=png&color=C4B0B2"/></a> | <a href="https://dduyg.github.io/LiminalLoop/07" target="_blank"><img width="30" height="30" src="https://img.icons8.com/?size=100&id=35326&format=png&color=C3BABA"/></a> |
-|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
-| <a href="https://dduyg.github.io/LiminalLoop/08" target="_blank"><img width="30" height="30" src="https://img.icons8.com/?size=100&id=35328&format=png&color=C4B0B2"/></a> | <a href="https://dduyg.github.io/LiminalLoop/09" target="_blank"><img width="30" height="30" src="https://img.icons8.com/?size=100&id=35330&format=png&color=C3BABA"/></a> | <a href="https://dduyg.github.io/LiminalLoop/12" target="_blank"><img width="30" height="30" src="https://img.icons8.com/?size=100&id=35337&format=png&color=C3BABA"/></a> |
-
 > internet__moods
 
 ```html
 <i class="fas fa-circle"></i>
 <i class="fas fa-square"></i>
 <i class="fas fa-database"></i>
-```
-
-```html
 <a href="../14/">➾</a>
-<a href="../">▶</a>
 ```
 
 <br>
