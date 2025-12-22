@@ -5,8 +5,6 @@
 | <a href="https://dduyg.github.io/LiminalLoop" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homeassistantcommunitystore/C3BABA"/></a> | <a href="https://dduyg.github.io/LiminalLoop/03" target="_blank"><img width="28" src="https://cdn.simpleicons.org/polywork/C3BABA"></a> | <a href="https://dduyg.github.io/LiminalLoop/04" target="_blank"><img width="28" src="https://cdn.simpleicons.org/linear/C3BABA"></a> | <a href="https://dduyg.github.io/LiminalLoop/05" target="_blank"><img width="32" src="https://cdn.simpleicons.org/htmx/b3abb1"/></a> | <a href="https://dduyg.github.io/LiminalLoop/07" target="_blank"><img width="28" src="https://cdn.simpleicons.org/spring_creators/C3BABA"/></a> | <a href="https://dduyg.github.io/LiminalLoop/08" target="_blank"><img width="28" src="https://cdn.simpleicons.org/xyflow/C4B0B2"/></a> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 
-<br>
-
 | <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | |
 |---|---|
 | <a href= "#" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | <blockquote>🌀</blockquote> |
