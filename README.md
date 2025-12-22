@@ -14,13 +14,11 @@ A [efficiency-obsessed] ML Engineer...
 
 
 ```
-<g transform="translate(40, 40)">
-    <text class="adjective">pattern-obsessed</text>
-    <text class="adjective">hyperparameter-tortured</text>
-    <text class="adjective">latent-space-wandering</text>
-    <text class="adjective">ensemble-everything</text>
-    <text class="adjective">architecturally adventurous</text>
-  </g>
+pattern-obsessed
+hyperparameter-tortured
+latent-space-wandering
+ensemble-everything
+architecturally adventurous
 ```
 
 ---
