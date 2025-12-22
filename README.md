@@ -13,15 +13,55 @@
 | <a href= "https://crop-circle.imageonline.co/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | <blockquote>cropCircle</blockquote> |
 | <a href= "https://uigradients.com/#Memariani" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | <blockquote>uigradients</blockquote> |
 | <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | <blockquote>auto re-indent online code beautifier [<kbd> <img width="15" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=D9D0D7"/> </kbd>](https://beautifier.io/)</blockquote> |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | <details><summary>LATEST ⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
+| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | <details><summary>⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
 
 </div>
+
+<br><br>
+
+<details><summary><blockquote>internet__moods</blockquote></summary>
+<br>
+
+```
+⭓⭔,  ⬡⬢,  ⬮⬯
+
+⛡ ▆  ⚞ ⏥   ♖ ▣
+```
+
+> ← `view-source`: a browser command that displays the raw code structure—including HTML, CSS, and JavaScript—behind a webpage can be accessed by typing ___view-source:___ in front of a URL in your browser’s address bar.
+
+<br>
+
+```html
+<i class="fas fa-circle"></i>
+<i class="fas fa-square"></i>
+<i class="fas fa-database"></i>
+<a href="../14/">➾</a>
+```
+
+>  Trademark (™) — &trade;
 
 
 <br><br>
 
-> internet__moods
----
+## <samp>Try this next</samp> 🪸
+- [x] ![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
+- [ ] Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
+- [ ] ....
+
+```html
+<link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
+<meta name="description" content="A simple website, built with Glitch. Remix it to get your own."/>
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="Hello World!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
+<meta property="og:description" content="A simple website, built with Glitch. Remix it to get your own."/>
+<meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"/>
+<meta name="twitter:card" content="summary" />
+```
+
+</details><hr>
 
 <details>
 <summary>&nbsp;<code>🪄 responsive font-size</code></summary>
