@@ -34,16 +34,19 @@ A [efficiency-obsessed] ML Engineer...
 <table>
   <tr>
     <td align="center" width="50"><a href="https://dduyg.github.io/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/internetarchive/C3BABA"></a></td>
-    <td rowspan="5"><p>Hi there 👋🏼 I’m Duygu—an efficiency-obsessed ML Engineer and Logic Synthesiser. I design scalable pipelines and explainable AI systems that don’t just work, but make sense.</p><p>I believe the best systems are explainable (if you can’t explain it, you don’t understand it), systematic (architecture is chaos, thoughtfully organized), and beautiful (code is craft, and aesthetics matter).</p>
-
-<p align="center">
-  <img width="80" src="https://media1.giphy.com/media/DHJvUyOySrf8c/giphy.gif">
-</p>
+    <td rowspan="5"><p align="center">Hi there 👋🏼 I’m Duygu—an efficiency-obsessed ML Engineer and Logic Synthesiser. I design scalable pipelines and explainable AI systems that don’t just work, but make sense.</p><p align="center"><samp>I believe the best systems are explainable (if you can’t explain it, you don’t understand it), systematic (architecture is chaos, thoughtfully organized), and beautiful (code is craft, and aesthetics matter).</samp></p>
 
 <div align="center">
+  <img width="70" src="https://media1.giphy.com/media/DHJvUyOySrf8c/giphy.gif">
+    <details><summary>&nbsp; <samp>Currently</samp></summary><br>
   
 *Currently exploring: Advanced model interpretability • Generative databases • Cloud Tech 🐍 ☁️*
 
+<br>
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)
+
+</details>
 </div></td>
   </tr>
   <tr>
@@ -59,13 +62,6 @@ A [efficiency-obsessed] ML Engineer...
     <td align="center" width="50"><a href="https://ko-fi.com/dduyg" target="_blank"><img width="28" src="https://cdn.simpleicons.org/kofi/C3BABA"/></a></td>
   </tr>
 </table>
-
-<details><summary>&nbsp; <samp>Currently</samp></summary>
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)
-
-</details>
-</div>
 
 
 ---
