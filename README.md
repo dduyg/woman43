@@ -12,16 +12,15 @@
 ---
 
 
-| <img width="28" src="https://media1.giphy.com/media/DHJvUyOySrf8c/giphy.gif"/> |  |
+| <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | <details><summary>LATEST ⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
 |---|---|
-| <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | <details><summary>**LATEST** ⛃⛂</summary>![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dduyg&theme=shadow_red&layout=compact&hide=css,scss,html&stats_format=bytes)</details> |
-| <a href= "#" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | AutoML Pipeline |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | Neural Architecture Search |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/sagemath/C3BABA"/></a> | Feature Engineering Library |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | SHAP Implementation Patterns |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | SHtterns |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | Stterns |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | Serns |
+| <a href= "#" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | 🌀 |
+| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | 🌀 |
+| <a href= "https://colorkit.co/html-color-names/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/sagemath/C3BABA"/></a> | HTML colornames |
+| <a href= "https://www.icoconverter.com/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | icoconverter |
+| <a href= "https://uigradients.com/#Memariani" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | uigradients |
+| <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | auto re-indent online code beautifier |
+| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | 🔘 |
 
 ---
 
