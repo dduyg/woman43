@@ -1,0 +1,753 @@
+{
+  "total": 22,
+  "glyphs": [
+    {
+      "id": "bbd012b4",
+      "filename": "160e7d_bbd012b4.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/160e7d_bbd012b4.png",
+      "color": {
+        "hex": "160e7d",
+        "group": "black",
+        "rgb": [
+          22,
+          14,
+          125
+        ],
+        "lab": [
+          15.3,
+          41.69,
+          -58.88
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0678,
+        "entropy": 16.9235,
+        "texture": 2.12,
+        "contrast": 0.9468,
+        "circularity": 0.2189,
+        "aspect_ratio": 0.9468,
+        "edge_angle": 1.0051
+      },
+      "color_harmony": "analogous",
+      "mood": "energetic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:29"
+      }
+    },
+    {
+      "id": "2a9712d6",
+      "filename": "d0cdca_2a9712d6.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/d0cdca_2a9712d6.png",
+      "color": {
+        "hex": "d0cdca",
+        "group": "gray",
+        "rgb": [
+          208,
+          205,
+          202
+        ],
+        "lab": [
+          82.56,
+          0.5,
+          1.85
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0051,
+        "entropy": 11.9889,
+        "texture": 2.7613,
+        "contrast": 0.5431,
+        "circularity": 0.7421,
+        "aspect_ratio": 0.7645,
+        "edge_angle": 5.0131
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:30"
+      }
+    },
+    {
+      "id": "3c704ac6",
+      "filename": "456e72_3c704ac6.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/456e72_3c704ac6.png",
+      "color": {
+        "hex": "456e72",
+        "group": "blue",
+        "rgb": [
+          69,
+          110,
+          114
+        ],
+        "lab": [
+          43.7,
+          -13.17,
+          -6.77
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.009,
+        "entropy": 15.3535,
+        "texture": 2.7579,
+        "contrast": 0.864,
+        "circularity": 0.8164,
+        "aspect_ratio": 1.2641,
+        "edge_angle": 37.0928
+      },
+      "color_harmony": "analogous",
+      "mood": "serene",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:30"
+      }
+    },
+    {
+      "id": "c11dd319",
+      "filename": "262c42_c11dd319.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/262c42_c11dd319.png",
+      "color": {
+        "hex": "262c42",
+        "group": "blue",
+        "rgb": [
+          38,
+          44,
+          66
+        ],
+        "lab": [
+          18.39,
+          3.99,
+          -14.7
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0243,
+        "entropy": 16.8762,
+        "texture": 2.4356,
+        "contrast": 1.0,
+        "circularity": 0.7752,
+        "aspect_ratio": 0.6336,
+        "edge_angle": 2.8689
+      },
+      "color_harmony": "analogous",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:30"
+      }
+    },
+    {
+      "id": "1f3ccadf",
+      "filename": "052e14_1f3ccadf.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/052e14_1f3ccadf.png",
+      "color": {
+        "hex": "052e14",
+        "group": "black",
+        "rgb": [
+          5,
+          46,
+          20
+        ],
+        "lab": [
+          15.68,
+          -21.24,
+          12.83
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0147,
+        "entropy": 13.8442,
+        "texture": 2.774,
+        "contrast": 0.8754,
+        "circularity": 0.5217,
+        "aspect_ratio": 0.7861,
+        "edge_angle": 3.3665
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:31"
+      }
+    },
+    {
+      "id": "e736c955",
+      "filename": "e881de_e736c955.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/e881de_e736c955.png",
+      "color": {
+        "hex": "e881de",
+        "group": "pink",
+        "rgb": [
+          232,
+          129,
+          222
+        ],
+        "lab": [
+          68.12,
+          52.35,
+          -30.5
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0427,
+        "entropy": 17.1311,
+        "texture": 2.3976,
+        "contrast": 0.9543,
+        "circularity": 0.5412,
+        "aspect_ratio": 1.1644,
+        "edge_angle": 8.3257
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:31"
+      }
+    },
+    {
+      "id": "83e583b8",
+      "filename": "6c1214_83e583b8.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/6c1214_83e583b8.png",
+      "color": {
+        "hex": "6c1214",
+        "group": "black",
+        "rgb": [
+          108,
+          18,
+          20
+        ],
+        "lab": [
+          22.55,
+          38.57,
+          24.22
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0117,
+        "entropy": 14.7841,
+        "texture": 2.7743,
+        "contrast": 0.9127,
+        "circularity": 0.7801,
+        "aspect_ratio": 0.7833,
+        "edge_angle": 4.6355
+      },
+      "color_harmony": "none",
+      "mood": "energetic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:32"
+      }
+    },
+    {
+      "id": "e2a1cb50",
+      "filename": "d2dedd_e2a1cb50.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/d2dedd_e2a1cb50.png",
+      "color": {
+        "hex": "d2dedd",
+        "group": "gray",
+        "rgb": [
+          210,
+          222,
+          221
+        ],
+        "lab": [
+          87.56,
+          -4.2,
+          -0.91
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0052,
+        "entropy": 12.6522,
+        "texture": 2.7143,
+        "contrast": 0.2722,
+        "circularity": 0.2072,
+        "aspect_ratio": 0.8141,
+        "edge_angle": 1.3639
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:32"
+      }
+    },
+    {
+      "id": "daadafd5",
+      "filename": "885d95_daadafd5.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/885d95_daadafd5.png",
+      "color": {
+        "hex": "885d95",
+        "group": "purple",
+        "rgb": [
+          136,
+          93,
+          149
+        ],
+        "lab": [
+          45.95,
+          27.83,
+          -23.83
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.082,
+        "entropy": 15.6199,
+        "texture": 2.5616,
+        "contrast": 1.0,
+        "circularity": 0.1805,
+        "aspect_ratio": 0.4975,
+        "edge_angle": 1.0912
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:33"
+      }
+    },
+    {
+      "id": "8ae248d0",
+      "filename": "393646_8ae248d0.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/393646_8ae248d0.png",
+      "color": {
+        "hex": "393646",
+        "group": "purple",
+        "rgb": [
+          57,
+          54,
+          70
+        ],
+        "lab": [
+          23.51,
+          5.24,
+          -9.4
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0507,
+        "entropy": 13.7896,
+        "texture": 2.8615,
+        "contrast": 1.0,
+        "circularity": 0.2192,
+        "aspect_ratio": 0.5103,
+        "edge_angle": 17.3255
+      },
+      "color_harmony": "analogous",
+      "mood": "mysterious",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:33"
+      }
+    },
+    {
+      "id": "10c7d99b",
+      "filename": "bdbeb8_10c7d99b.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/bdbeb8_10c7d99b.png",
+      "color": {
+        "hex": "bdbeb8",
+        "group": "gray",
+        "rgb": [
+          189,
+          190,
+          184
+        ],
+        "lab": [
+          76.74,
+          -1.44,
+          2.89
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0933,
+        "entropy": 13.4544,
+        "texture": 2.8359,
+        "contrast": 0.9402,
+        "circularity": 0.6111,
+        "aspect_ratio": 1.1313,
+        "edge_angle": 0.3845
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:33"
+      }
+    },
+    {
+      "id": "54c930d7",
+      "filename": "1e1e1a_54c930d7.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/1e1e1a_54c930d7.png",
+      "color": {
+        "hex": "1e1e1a",
+        "group": "black",
+        "rgb": [
+          30,
+          30,
+          26
+        ],
+        "lab": [
+          11.13,
+          -0.96,
+          2.75
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.1169,
+        "entropy": 14.5232,
+        "texture": 2.3556,
+        "contrast": 1.0,
+        "circularity": 0.0971,
+        "aspect_ratio": 0.9353,
+        "edge_angle": 6.19
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:34"
+      }
+    },
+    {
+      "id": "8e08b3bb",
+      "filename": "c7c6de_8e08b3bb.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/c7c6de_8e08b3bb.png",
+      "color": {
+        "hex": "c7c6de",
+        "group": "gray",
+        "rgb": [
+          199,
+          198,
+          222
+        ],
+        "lab": [
+          80.63,
+          4.97,
+          -11.79
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0834,
+        "entropy": 16.9054,
+        "texture": 2.5596,
+        "contrast": 0.6849,
+        "circularity": 0.853,
+        "aspect_ratio": 1.1431,
+        "edge_angle": 1.048
+      },
+      "color_harmony": "none",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:34"
+      }
+    },
+    {
+      "id": "8801a475",
+      "filename": "088b6f_8801a475.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/088b6f_8801a475.png",
+      "color": {
+        "hex": "088b6f",
+        "group": "blue",
+        "rgb": [
+          8,
+          139,
+          111
+        ],
+        "lab": [
+          51.46,
+          -38.53,
+          6.15
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0253,
+        "entropy": 14.9272,
+        "texture": 2.7653,
+        "contrast": 1.0,
+        "circularity": 0.1765,
+        "aspect_ratio": 1.0956,
+        "edge_angle": 32.9387
+      },
+      "color_harmony": "analogous",
+      "mood": "dramatic",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:35"
+      }
+    },
+    {
+      "id": "7d0d9c66",
+      "filename": "edc2dc_7d0d9c66.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/edc2dc_7d0d9c66.png",
+      "color": {
+        "hex": "edc2dc",
+        "group": "pink",
+        "rgb": [
+          237,
+          194,
+          220
+        ],
+        "lab": [
+          82.78,
+          19.5,
+          -7.17
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0448,
+        "entropy": 16.653,
+        "texture": 2.5404,
+        "contrast": 1.0,
+        "circularity": 0.1348,
+        "aspect_ratio": 1.1243,
+        "edge_angle": 6.0725
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:34"
+      }
+    },
+    {
+      "id": "419ef26c",
+      "filename": "d7c5ea_419ef26c.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/d7c5ea_419ef26c.png",
+      "color": {
+        "hex": "d7c5ea",
+        "group": "silver",
+        "rgb": [
+          215,
+          197,
+          234
+        ],
+        "lab": [
+          82.01,
+          13.12,
+          -16.01
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0664,
+        "entropy": 16.1347,
+        "texture": 2.582,
+        "contrast": 1.0,
+        "circularity": 0.1042,
+        "aspect_ratio": 1.0209,
+        "edge_angle": 5.6535
+      },
+      "color_harmony": "none",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:37"
+      }
+    },
+    {
+      "id": "5b2836ea",
+      "filename": "cec9d6_5b2836ea.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/cec9d6_5b2836ea.png",
+      "color": {
+        "hex": "cec9d6",
+        "group": "gray",
+        "rgb": [
+          206,
+          201,
+          214
+        ],
+        "lab": [
+          81.7,
+          4.13,
+          -5.85
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0023,
+        "entropy": 12.3813,
+        "texture": 2.761,
+        "contrast": 0.1958,
+        "circularity": 0.7938,
+        "aspect_ratio": 1.0215,
+        "edge_angle": 5.7106
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:38"
+      }
+    },
+    {
+      "id": "205c86e7",
+      "filename": "cab7d4_205c86e7.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/cab7d4_205c86e7.png",
+      "color": {
+        "hex": "cab7d4",
+        "group": "silver",
+        "rgb": [
+          202,
+          183,
+          212
+        ],
+        "lab": [
+          76.79,
+          12.05,
+          -12.11
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0011,
+        "entropy": 12.7647,
+        "texture": 2.7037,
+        "contrast": 0.2521,
+        "circularity": 0.8042,
+        "aspect_ratio": 1.0242,
+        "edge_angle": 18.4349
+      },
+      "color_harmony": "analogous",
+      "mood": "serene",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:38"
+      }
+    },
+    {
+      "id": "8a332605",
+      "filename": "d6dcdd_8a332605.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/d6dcdd_8a332605.png",
+      "color": {
+        "hex": "d6dcdd",
+        "group": "gray",
+        "rgb": [
+          214,
+          220,
+          221
+        ],
+        "lab": [
+          87.34,
+          -1.83,
+          -1.2
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0009,
+        "entropy": 14.9314,
+        "texture": 2.8213,
+        "contrast": 0.2767,
+        "circularity": 0.8411,
+        "aspect_ratio": 1.0019,
+        "edge_angle": 1.6366
+      },
+      "color_harmony": "analogous",
+      "mood": "serene",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:38"
+      }
+    },
+    {
+      "id": "580e6efd",
+      "filename": "d7d3db_580e6efd.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/d7d3db_580e6efd.png",
+      "color": {
+        "hex": "d7d3db",
+        "group": "gray",
+        "rgb": [
+          215,
+          211,
+          219
+        ],
+        "lab": [
+          85.07,
+          2.83,
+          -3.46
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0018,
+        "entropy": 12.2967,
+        "texture": 2.8947,
+        "contrast": 0.2907,
+        "circularity": 0.4482,
+        "aspect_ratio": 1.0393,
+        "edge_angle": 2.7263
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:39"
+      }
+    },
+    {
+      "id": "4713eb24",
+      "filename": "f5f7f5_4713eb24.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/f5f7f5_4713eb24.png",
+      "color": {
+        "hex": "f5f7f5",
+        "group": "white",
+        "rgb": [
+          245,
+          247,
+          245
+        ],
+        "lab": [
+          97.04,
+          -1.01,
+          0.72
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0007,
+        "entropy": 13.7072,
+        "texture": 2.4312,
+        "contrast": 0.1322,
+        "circularity": 0.7536,
+        "aspect_ratio": 0.9155,
+        "edge_angle": 0.0
+      },
+      "color_harmony": "none",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:40"
+      }
+    },
+    {
+      "id": "d1bbc965",
+      "filename": "ded8eb_d1bbc965.png",
+      "glyph_url": "https://cdn.jsdelivr.net/gh/dduyg/woman43@main/glyphs/ded8eb_d1bbc965.png",
+      "color": {
+        "hex": "ded8eb",
+        "group": "gray",
+        "rgb": [
+          222,
+          216,
+          235
+        ],
+        "lab": [
+          87.31,
+          5.53,
+          -8.57
+        ]
+      },
+      "metrics": {
+        "edge_density": 0.0023,
+        "entropy": 16.2764,
+        "texture": 2.7626,
+        "contrast": 0.404,
+        "circularity": 0.6051,
+        "aspect_ratio": 1.0133,
+        "edge_angle": 10.7843
+      },
+      "color_harmony": "analogous",
+      "mood": "playful",
+      "created_at": {
+        "date": "2025-12-26",
+        "time": "01:47:40"
+      }
+    }
+  ]
+}
