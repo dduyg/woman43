@@ -14,51 +14,40 @@
             color: #171321;
         }
 
-        .container {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .navbar {
-            padding: 20px 0;
-            text-align: center; /* Centers the logo and menu items */
+        nav {
+            padding: 20px;
+            text-align: center;
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
             color: #87fffb;
-            text-decoration: none;
             cursor: pointer;
-            display: block;
+            user-select: none; /* Prevents highlighting text on fast clicks */
             margin-bottom: 10px;
         }
 
-        /* The Menu is hidden by default for everyone now */
         .menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none; 
+            display: none; /* Hidden by default */
+            flex-direction: column; /* Stacks links vertically */
+            gap: 15px;
+            margin-top: 15px;
         }
 
-        /* Show the menu only when .active is toggled via JS */
+        /* Show menu when active class is added via JS */
         .menu.active {
-            display: block;
+            display: flex; 
         }
 
-        .menu li {
-            margin: 10px 0;
-        }
-
-        .menu li a {
+        .menu a {
             color: #171321;
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s ease;
         }
 
-        .menu li a:hover {
+        .menu a:hover {
             color: #87fffb;
         }
 
@@ -66,54 +55,48 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             color: #87fffb;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="javascript:void(0)" class="logo">Liminal Loop</a>
-                <ul class="menu">
-                    <li><a href="#">Start</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Posts</a></li>
-                    <li><a href="#">More</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">Liminal Loop</div>
+        <div class="menu">
+            <a href="#first">Start</a>
+            <a href="#second">About</a>
+            <a href="#third">Posts</a>
+            <a href="#fourth">More</a>
+        </div>
+    </nav>
 
     <main>
-        <section>
-            <h1>Welcome to my LiminalLoop</h1>
-            <p>Click the "Liminal Loop" title above to toggle the menu navigation.</p>
-        </section>
+        <h1>Welcome to LiminalLoop</h1>
+        <p>Click the title above to open the menu.</p>
     </main>
 
     <script>
-        const menuBtn = document.querySelector('.logo');
+        const logo = document.querySelector('.logo');
         const menu = document.querySelector('.menu');
-        const menuItems = document.querySelectorAll('.menu li a');
+        const menuLinks = document.querySelectorAll('.menu a');
 
-        // Toggle menu visibility
-        menuBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+        // Toggle the 'active' class on the menu div
+        logo.addEventListener('click', () => {
             menu.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
+        // Close the menu when any link inside it is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
                 menu.classList.remove('active');
             });
         });
     </script>
+
 </body>
 </html>
