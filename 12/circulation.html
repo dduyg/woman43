@@ -15,83 +15,84 @@
         }
 
         nav {
-            padding: 20px;
+            padding: 30px;
             text-align: center;
         }
 
-        .logo {
+        /* The clickable title */
+        .menu-trigger {
             font-size: 24px;
             font-weight: bold;
             color: #87fffb;
             cursor: pointer;
-            user-select: none; /* Prevents highlighting text on fast clicks */
-            margin-bottom: 10px;
+            user-select: none;
+            display: inline-block;
         }
 
+        /* The hidden container */
         .menu {
-            display: none; /* Hidden by default */
-            flex-direction: column; /* Stacks links vertically */
+            display: none; 
+            flex-direction: column;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
-        /* Show menu when active class is added via JS */
+        /* Revealed state */
         .menu.active {
-            display: flex; 
+            display: flex;
         }
 
         .menu a {
             color: #171321;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         .menu a:hover {
             color: #87fffb;
+            letter-spacing: 1px; /* Subtle effect for the loop theme */
         }
 
         main {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-        }
-
-        h1 {
-            color: #87fffb;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Liminal Loop</div>
+        <div class="menu-trigger">LiminalLoop</div>
+        
         <div class="menu">
-            <a href="#first">Start</a>
-            <a href="#second">About</a>
-            <a href="#third">Posts</a>
-            <a href="#fourth">More</a>
+            <a href="#">Start</a>
+            <a href="#">About</a>
+            <a href="#">Posts</a>
+            <a href="#">More</a>
         </div>
     </nav>
 
     <main>
-        <h1>Welcome to LiminalLoop</h1>
-        <p>Click the title above to open the menu.</p>
+        <p>The loop is waiting. Click the title above to navigate.</p>
     </main>
 
     <script>
-        const logo = document.querySelector('.logo');
+        const trigger = document.querySelector('.menu-trigger');
         const menu = document.querySelector('.menu');
-        const menuLinks = document.querySelectorAll('.menu a');
+        const links = document.querySelectorAll('.menu a');
 
-        // Toggle the 'active' class on the menu div
-        logo.addEventListener('click', () => {
+        // Toggle visibility
+        trigger.addEventListener('click', () => {
             menu.classList.toggle('active');
         });
 
-        // Close the menu when any link inside it is clicked
-        menuLinks.forEach(link => {
+        // Auto-close when a link is clicked
+        links.forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.remove('active');
             });
