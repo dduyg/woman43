@@ -13,110 +13,87 @@
             background-color: #b1acb9;
             color: #171321;
         }
+
         .container {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
-            overflow: hidden;
         }
+
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 20px 0;
+            text-align: center; /* Centers the logo and menu items */
         }
+
         .logo {
             font-size: 24px;
             font-weight: bold;
             color: #87fffb;
             text-decoration: none;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 10px;
         }
+
+        /* The Menu is hidden by default for everyone now */
         .menu {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: none; 
         }
+
+        /* Show the menu only when .active is toggled via JS */
+        .menu.active {
+            display: block;
+        }
+
         .menu li {
-            display: inline-block;
-            margin-left: 20px;
+            margin: 10px 0;
         }
+
         .menu li a {
             color: #171321;
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s ease;
         }
+
+        .menu li a:hover {
+            color: #87fffb;
+        }
+
         main {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
-        h1, h2, h3 {
+
+        h1 {
             text-align: center;
             color: #87fffb;
-        }
-        .menu li a:hover {
-            color: #87fffb;
-        }
-        section {
-            padding: 80px 0;
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-            .menu {
-                display: none;
-            }
-            .menu.active {
-                display: block;
-            }
-            .menu li {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-        code {
-            background-color: #000;
-            color: #FFD700;
-            padding: 2px 5px;
-            border-radius: 3px;
         }
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="#" class="logo">Liminal Loop</a>
+                <a href="javascript:void(0)" class="logo">Liminal Loop</a>
                 <ul class="menu">
-                    <li><a href="#first">Start</a></li>
-                    <li><a href="#second">About</a></li>
-                    <li><a href="#third">Posts</a></li>
-                    <li><a href="#fourth">More</a></li>
+                    <li><a href="#">Start</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Posts</a></li>
+                    <li><a href="#">More</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="first">
+        <section>
             <h1>Welcome to my LiminalLoop</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-        
-        <section id="second">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-        
-        <section id="third">
-            <h2>Posts</h2>
-            <code>items here</code>
-        </section>
-        
-        <section id="fourth">
-            <h2>More</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
+            <p>Click the "Liminal Loop" title above to toggle the menu navigation.</p>
         </section>
     </main>
 
@@ -125,12 +102,13 @@
         const menu = document.querySelector('.menu');
         const menuItems = document.querySelectorAll('.menu li a');
 
-        // Toggle menu active class
-        menuBtn.addEventListener('click', () => {
+        // Toggle menu visibility
+        menuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             menu.classList.toggle('active');
         });
 
-        // Close menu when a menu item is clicked
+        // Close menu when a link is clicked
         menuItems.forEach(item => {
             item.addEventListener('click', () => {
                 menu.classList.remove('active');
